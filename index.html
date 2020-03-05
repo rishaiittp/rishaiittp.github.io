@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+    h2 {
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #007CFF, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}    
+    </style>
         <script>setTimeout(function(){window.location.href='home.html'},2850);</script>
     </head>
     <body style="background:black">
-            <img src="assets/images/loading5.gif" style="margin-top: 2rem;margin-left: 20rem;">
-        <h2 style="text-align: center;color: #007CFF;font-size: 3rem;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Loading ...</h2>
+            <img src="assets/images/loading5.gif" style="margin-left: 20rem;">
+            <h2 style="text-align: center;color: #007CFF;font-size: 3rem;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin-bottom: 1rem;">Research in Intelligent Software & Human Analytics Lab</h2>
     </body>
 
 </html>

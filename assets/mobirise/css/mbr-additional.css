@@ -442,7 +442,8 @@ body {
   color: #b1a374 !important;
 }
 .text-white {
-  color: #ffffff !important;
+  color: #252525 !important;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
 }
 .text-black {
   color: #000000 !important;
@@ -473,7 +474,11 @@ a.text-danger:focus {
 }
 a.text-white:hover,
 a.text-white:focus {
-  color: #b3b3b3 !important;
+  color:  black !important;
+  border-bottom: 4px solid #1428A0;
+  border-bottom: 4px solid #6B84FB;
+  border-radius: 1rem;
+  border-top: 4px solid #6B84FB;  
 }
 a.text-black:hover,
 a.text-black:focus {
@@ -1155,7 +1160,7 @@ section.lazy-placeholder:after {
 }
 .cid-rNnS6TB9s8 .nav-link:hover,
 .cid-rNnS6TB9s8 .dropdown-item:hover {
-  color: #c1c1c1 !important;
+  color: black !important;
 }
 .cid-rNnYxRCke6 {
   padding-top: 0px;
@@ -1215,8 +1220,8 @@ section.lazy-placeholder:after {
 .cid-rNo1LP0W2w {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: #149dcc;
-  background: linear-gradient(45deg, #149dcc, #232323);
+  background-color: #456fff;
+  background: linear-gradient(45deg, #456fff, #5407E0)
 }
 .cid-rNo1LP0W2w .media-container-row {
   flex-direction: row-reverse;
@@ -1475,7 +1480,7 @@ section.lazy-placeholder:after {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #ffffff;
+  background-color:#fff;
 }
 .cid-rNnS6TB9s8 button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -1711,7 +1716,7 @@ section.lazy-placeholder:after {
 }
 .cid-rNnS6TB9s8 .nav-link:hover,
 .cid-rNnS6TB9s8 .dropdown-item:hover {
-  color: #c1c1c1 !important;
+  color: #6B84FB !important;
 }
 .cid-rNo50WJZgH {
   padding-top: 120px;
@@ -2048,7 +2053,7 @@ section.lazy-placeholder:after {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #ffffff;
+  background-color: #252525;
 }
 .cid-rNnS6TB9s8 button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -2284,7 +2289,7 @@ section.lazy-placeholder:after {
 }
 .cid-rNnS6TB9s8 .nav-link:hover,
 .cid-rNnS6TB9s8 .dropdown-item:hover {
-  color: #c1c1c1 !important;
+  color: black !important;
 }
 .cid-rNobYwULPS {
   padding-top: 120px;
