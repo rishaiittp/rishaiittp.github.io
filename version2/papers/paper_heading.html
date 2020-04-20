@@ -1,0 +1,103 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="RISHA">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="mask-icon" type="" href="favicon.ico" color="#111">
+    <title>Heading Research Papers | RISHA LAB</title>
+    <style>
+    @import "https://fonts.googleapis.com/css?family=Josefin+Sans:400,700";
+    
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #ecf0ff;
+      background: #f2f2f2;
+      height: 10vh;
+      font-size: 40px;
+      line-height: 1.5;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      list-style: none;
+      border-bottom: 0;
+    }
+    
+    .text.hidden {
+      border-bottom: 1px solid #000;
+    }
+    
+    .text li {
+      display: inline-block;
+      float: left;
+      color: #000;
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+      max-width: 2em;
+    }
+    .text.hidden li.spaced {
+      padding-left: 0;
+    }
+    .text li.spaced {
+      padding-left: 0.5em;
+    }
+    
+    .text.hidden li.ghost {
+      opacity: 0;
+      max-width: 0;
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    <ul class="text hidden">
+    <li>R</li>
+    <li class="ghost">E</li>
+    <li class="ghost">S</li>
+    <li class="ghost">E</li>
+    <li id="rm1">I</li>
+    <li class="ghost">A</li>
+    <li class="ghost">R</li>
+    <li class="ghost">C</li>
+    <li id="rm2" style="color: #456FFF;">S</li>
+    <li class="ghost">H&nbsp;</li>
+    <li class="ghost" style="color: #456FFF;">P</li>
+    <li class="ghost" style="color: #456FFF;">A</li>
+    <li id="rm3" style="color: #456FFF;">H</li>
+    <li class="ghost" style="color: #456FFF;">P</li>
+    <li class="ghost" style="color: #456FFF;">E</li>
+    <li class="ghost" style="color: #456FFF;">R</li>
+    <li class="ghost" style="color: #456FFF;">S</li>
+    <li id="rm4" style="color: #456FFF;">A</li>
+    </ul>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script id="rendered-js">
+    $(function () {
+      var text = $(".text");
+      setTimeout(() => {
+      text.removeClass("hidden");
+      document.getElementById('rm1').style.display = 'none';
+      document.getElementById('rm2').style.display = 'none';
+      document.getElementById('rm3').style.display = 'none';
+      document.getElementById('rm4').style.display = 'none';
+      }, 500); 
+       
+    });
+        </script>
+    
+    
+    </body></html>

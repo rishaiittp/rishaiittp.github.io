@@ -1,0 +1,372 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="RISHA">
+    <title>Profile | RISHA LAB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <style>
+    @import "https://fonts.googleapis.com/css?family=Josefin+Sans:400,700";
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    
+    body {
+      font-family: "Josefin Sans", sans-serif;
+    }
+    
+    .card {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 250px;
+      height: 380px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+      background: #fff;
+      overflow: hidden;
+    }
+    .card .ds-top {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 300px;
+      height: 80px;
+      background: #000;
+      animation: dsTop 1.5s;
+    }
+    .card .avatar-holder {
+      position: absolute;
+      margin: auto;
+      top: 40px;
+      right: 0;
+      left: 0;
+      width: 100px;
+      height: 90px;
+      border-radius: 50%;
+      background: white;
+      overflow: hidden;
+      animation: mvTop 1.5s;
+    }
+    .card .avatar-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card .name {
+      position: absolute;
+      margin: auto;
+      top: -60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: inherit;
+      height: 40px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    .card .name a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .card .name a:hover {
+      text-decoration: underline;
+      color: #e5eeff;
+    }
+    .card .name h6 {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: white;
+      width: 40px;
+    }
+    .card .button {
+      position: absolute;
+      margin: auto;
+      padding: 8px;
+      top: 20px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: inherit;
+      height: 40px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      outline: none;
+    }
+    .card .button a {
+      padding: 5px 20px;
+      border-radius: 10px;
+      color: white;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-size: 10px;
+      transition: all 1s;
+    }
+    .card .button a:hover {
+      color: white;
+      background: #e5eeff;
+    }
+    .card .ds-info {
+      position: absolute;
+      margin: auto;
+      top: 120px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: inherit;
+      height: 40px;
+      display: flex;
+    }
+    .card .ds-info .pens, .card .ds-info .projects, .card .ds-info .posts {
+      position: relative;
+      left: -300px;
+      width: calc(250px / 3);
+      text-align: center;
+      color: white;
+      animation: fadeInMove 2s;
+      animation-fill-mode: forwards;
+    }
+    .card .ds-info .pens h6, .card .ds-info .projects h6, .card .ds-info .posts h6 {
+      text-transform: uppercase;
+      color: #e5eeff;
+      color: #53588B;
+    }
+    .card .ds-info .pens p, .card .ds-info .projects p, .card .ds-info .posts p {
+      font-size: 12px;
+      color: #000000;
+    }
+    .card .ds-info .ds:nth-of-type(2) {
+      animation-delay: .5s;
+    }
+    .card .ds-info .ds:nth-of-type(1) {
+      animation-delay: 1s;
+    }
+    .card .ds-skill {
+      position: absolute;
+      margin: auto;
+      bottom: 10px;
+      right: 0;
+      left: 0;
+      width: 200px;
+      height: 80px;
+      animation: mvBottom 1.5s;
+    }
+    .card .ds-skill h6 {
+      margin-bottom: 5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #e5eeff;
+    }
+    .card .ds-skill .skill h6 {
+      font-weight: 400;
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      margin: 4px 0;
+      color: white;
+    }
+    .card .ds-skill .skill .fab {
+      color: #e5eeff;
+      font-size: 14px;
+    }
+    .card .ds-skill .skill .bar {
+      height: 5px;
+      background: #e5eeff;
+      text-align: right;
+    }
+    .card .ds-skill .skill .bar p {
+      color: white;
+      font-size: 8px;
+      padding-top: 5px;
+      animation: fadeIn 5s;
+    }
+    .card .ds-skill .skill .bar:hover {
+      background: white;
+    }
+    .card .ds-skill .skill .bar-html {
+      width: 95%;
+      animation: htmlSkill 1s;
+      animation-delay: .4s;
+    }
+    .card .ds-skill .skill .bar-css {
+      width: 90%;
+      animation: cssSkill 2s;
+      animation-delay: .4s;
+    }
+    .card .ds-skill .skill .bar-js {
+      width: 75%;
+      animation: jsSkill 3s;
+      animation-delay: .4s;
+    }
+    
+    @keyframes fadeInMove {
+      0% {
+        opacity: 0;
+        left: -300px;
+      }
+      100% {
+        opacity: 1;
+        left: 0;
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes htmlSkill {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 95%;
+      }
+    }
+    @keyframes cssSkill {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 90%;
+      }
+    }
+    @keyframes jsSkill {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 75%;
+      }
+    }
+    @keyframes mvBottom {
+      0% {
+        bottom: -150px;
+      }
+      100% {
+        bottom: 10px;
+      }
+    }
+    @keyframes mvTop {
+      0% {
+        top: -150px;
+      }
+      100% {
+        top: 40px;
+      }
+    }
+    @keyframes dsTop {
+      0% {
+        top: -150px;
+      }
+      100% {
+        top: 0;
+      }
+    }
+    .following {
+      color: white;
+      background: #e5eeff;
+    }
+    #hi:hover{
+        background: black;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+     <script src="https://kit.fontawesome.com/7678d997fc.js" crossorigin="anonymous"></script>
+   
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    
+    <div style="margin: 0;padding: 0;">
+      <div class="card">
+        <div class="ds-top"></div>
+        <div class="avatar-holder">
+        <img src="images/sridhar.jpg" alt="Sridhar Chimalakonda">
+        </div>
+        <div class="name">
+        <a href="https://researchweb.iiit.ac.in/~sridhar_ch/home.html" target="_blank" style="color: Black;">Sridhar Chimalakonda</a>
+        <h6 title="Followers"><i class="fa fa-users" style="color: #000;"></i> <span class="followers" style="color: Black;">90</span></h6>
+        </div>
+        <div class="button">
+        <a href="#" class="btn" onmousedown="follow();" style="color: Black;">Follow <i class="fa fa-user-plus"></i></a>
+        </div>
+        <div class="ds-info">
+        <div class="ds pens">
+        <h6 title="Number of pens created by the user">Papers <i class="fa fa-edit"></i></h6>
+        <p style="margin-top: 0.5rem;">200</p>
+        </div>
+        <div class="ds projects">
+        <h6 title="Number of projects created by the user">Projects <i class="fa fa-project-diagram"></i></h6>
+        <p style="margin-top: 0.5rem;">100</p>
+        </div>
+        <div class="ds posts">
+        <h6 title="Number of posts">Posts <i class="fa fa-comments"></i></h6>
+        <p style="margin-top: 0.5rem;">40</p>
+        </div>
+        </div>
+        <div class="ds-skill" style="margin-left: 2.2rem;margin-top: 5rem;">
+            <div style="display: flex;">
+                <i id="hi" style="flex: 1; padding: 0.75rem;padding-left: 1.1rem;padding-right: 0rem;" class="fa fa-facebook" aria-hidden="true"></i>
+                <i id="hi"  style="flex: 1;padding: 0.75rem;padding-right: 0rem;" class="fa fa-twitter" aria-hidden="true"></i>
+                <i id="hi"  style="flex: 1; padding: 0.75rem;padding-left: 1rem;padding-right: 0rem;" class="fa fa-linkedin" aria-hidden="true"></i>
+                <i id="hi"  style="flex: 1; padding: 0.75rem;padding-left: 1rem;padding-right: 0rem;" class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script id="rendered-js">
+    const target = {
+      clicked: 0,
+      currentFollowers: 90,
+      btn: document.querySelector("a.btn"),
+      fw: document.querySelector("span.followers") };
+    
+    
+    const follow = () => {
+      target.clicked += 1;
+      target.btn.innerHTML = 'Following <i class="fa fa-user-times"></i>';
+    
+      if (target.clicked % 2 === 0) {
+        target.currentFollowers -= 1;
+        target.btn.innerHTML = 'Follow <i class="fa fa-user-plus"></i>';
+      } else
+      {
+        target.currentFollowers += 1;
+      }
+    
+      target.fw.textContent = target.currentFollowers;
+      target.btn.classList.toggle("following");
+    };
+        </script>
+    
+    
+    </body></html>

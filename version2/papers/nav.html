@@ -1,0 +1,128 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="RISHA">
+    <title>Nav Head | Risha Lab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <style>
+    body {
+      height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    nav {
+      position: relative;
+      display: block;
+      background-color: #f6f9ff;
+      padding: 10px;
+      border-radius: 40px;
+      transform: scale(1.8);
+      overflow: hidden;
+    }
+    
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: #53588b;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 12px;
+      line-height: 1;
+      text-align: center;
+      display: inline-block;
+      width: 100px;
+      padding: 10px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+    
+    nav a b {
+      position: relative;
+      top: 40px;
+      transition: 0.3s ease top;
+    }
+    
+    nav a i {
+      position: relative;
+      left: 25%;
+      transition: 0.3s ease left;
+    }
+    
+    nav span {
+      position: absolute;
+      width: 100px;
+      background-color: #e5eeff;
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+      border-radius: 50px;
+      z-index: 1;
+      transition: 0.3s ease left;
+    }
+    
+    nav a:hover b {
+      top: 0;
+    }
+    
+    nav a:hover i {
+      left: 0;
+    }
+    
+    nav a:nth-child(1):hover ~ span {
+      left: 10px;
+    }
+    
+    nav a:nth-child(2):hover ~ span {
+      left: 114px;
+    }
+    
+    nav a:nth-child(3):hover ~ span {
+      left: 218px;
+    }
+    nav a:nth-child(4):hover ~ span {
+      left: 322px;
+    }
+    nav a:nth-child(5):hover ~ span {
+      left: 426px;
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/7678d997fc.js" crossorigin="anonymous"></script>
+    </head>
+    <body translate="no" style="margin-top:0rem;">
+    <nav style="margin-left: 0rem;margin-right: 0rem;bottom: 0;position: fixed;margin-bottom: 5rem;">
+    <a href="../index.html" target="_blank">
+    <i class="fas fa-home"></i>
+    <b>home</b>
+    </a>
+    
+    <a href="#">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <b>Projects</b>
+    </a>
+    <a href="#" target="_blank">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        <b>Papers</b>
+    </a>
+    <a href="../team/about.html" target="_blank">
+       <i class="fa fa-users" aria-hidden="true"></i> 
+       <b>Team</b>
+    </a>
+
+    <a href="#">
+    <i class="fas fa-award"></i>
+    <b>Awards</b>
+    </a>
+    <span></span>
+    </nav>
+    
+    
+    </body></html>
