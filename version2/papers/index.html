@@ -286,6 +286,183 @@
 content: "\e01d";
 }
   </style>
+    
+    
+
+  <style>
+    .first{
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
+      }
+      
+      .select-box {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0;
+        font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+        font-size: 18px;
+        color: #60666d;
+      }
+      @media (min-width: 768px) {
+        .select-box {
+          width: 70%;
+        }
+      }
+      @media (min-width: 992px) {
+        .select-box {
+          width: 50%;
+        }
+      }
+      @media (min-width: 1200px) {
+        .select-box {
+          width: 30%;
+        }
+      }
+      .select-box__current {
+        position: relative;
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        outline: none;
+      }
+      .select-box__current:focus + .select-box__list {
+        opacity: 1;
+        -webkit-animation-name: none;
+                animation-name: none;
+      }
+      .select-box__current:focus + .select-box__list .select-box__option {
+        cursor: pointer;
+      }
+      .select-box__current:focus .select-box__icon {
+        -webkit-transform: translateY(-50%) rotate(180deg);
+                transform: translateY(-50%) rotate(180deg);
+      }
+      .select-box__icon {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 20px;
+        opacity: 0.3;
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease;
+      }
+      .select-box__value {
+        display: -webkit-box;
+        display: flex;
+      }
+      .select-box__input {
+        display: none;
+      }
+      .select-box__input:checked + .select-box__input-text {
+        display: block;
+      }
+      .select-box__input-text {
+        display: none;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        background-color: #fff;
+      }
+      .select-box__list {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        opacity: 0;
+        -webkit-animation-name: HideList;
+                animation-name: HideList;
+        -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: step-start;
+                animation-timing-function: step-start;
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+      }
+      .select-box__option {
+        display: block;
+        padding: 15px;
+        background-color: #fff;
+      }
+      .select-box__option:hover, .select-box__option:focus {
+        color: #546c84;
+        background-color: #fbfbfb;
+      }
+      
+      @-webkit-keyframes HideList {
+        from {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+        }
+        to {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+        }
+      }
+      
+      @keyframes HideList {
+        from {
+          -webkit-transform: scaleY(1);
+                  transform: scaleY(1);
+        }
+        to {
+          -webkit-transform: scaleY(0);
+                  transform: scaleY(0);
+        }
+      }
+      </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    <script>
+        function f_year(val) 
+        {
+            switch (val) {
+                case 2020:
+                    document.getElementById('year2020').style.display = 'block';
+                    document.getElementById('year2019').style.display = 'none';
+                    document.getElementById('year2018').style.display = 'none';
+                    document.getElementById('year2017').style.display = 'none';
+                    break;
+                case 2019:
+                    document.getElementById('year2020').style.display = 'none';
+                    document.getElementById('year2019').style.display = 'block';
+                    document.getElementById('year2018').style.display = 'none';
+                    document.getElementById('year2017').style.display = 'none';
+                    break;
+                case 2018:
+                    document.getElementById('year2020').style.display = 'none';
+                    document.getElementById('year2019').style.display = 'none';
+                    document.getElementById('year2018').style.display = 'block';
+                    document.getElementById('year2017').style.display = 'none';
+                    break;
+                case 2017:
+                    document.getElementById('year2020').style.display = 'none';
+                    document.getElementById('year2019').style.display = 'none';
+                    document.getElementById('year2018').style.display = 'none';
+                    document.getElementById('year2017').style.display = 'block';
+                    break;
+            
+                default:
+                    document.getElementById('year2020').style.display = 'block';
+                    document.getElementById('year2019').style.display = 'block';
+                    document.getElementById('year2018').style.display = 'block';
+                    document.getElementById('year2017').style.display = 'block';
+                    break;
+            }
+        }
+    </script>
+
 </head>
 <body>
     
@@ -384,28 +561,99 @@ content: "\e01d";
     
     </div>
     <div style="margin-left: 1rem;">
-        <iframe src="paper1/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+    <div style="display: flex;height: 15rem;margin-top: 2rem;">
+        <div style="flex: 3;">
+
+        </div>
+        <div style="flex: 1;padding-right: 17rem;">
+            <div class="first" translate="no">
+                <div class="select-box" style="width: 100%;">
+                <div class="select-box__current" tabindex="1">
+                <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" onclick="f_year(-1)">
+                <p class="select-box__input-text">Papers till Date</p>
+                </div>
+                <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="1" value="2" name="Ben" onclick="f_year(2020)">
+                <p class="select-box__input-text">2020</p>
+                </div>
+                <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="2" value="3" name="Ben" onclick="f_year(2019)">
+                <p class="select-box__input-text">2019</p>
+                </div>
+                <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="3" value="4" name="Ben" onclick="f_year(2018)">
+                <p class="select-box__input-text">2018</p>
+                </div>
+                <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="4" value="5" name="Ben" onclick="f_year(2017)">
+                <p class="select-box__input-text">2017</p>
+                </div>
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="5" value="6" name="Ben" onclick="f_year(2016)">
+                    <p class="select-box__input-text">2016</p>
+                </div>
+                    
+                <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
+                </div>
+                <ul class="select-box__list">
+                <li>
+                <label class="select-box__option" for="0" aria-hidden="aria-hidden">Papers Till Date</label>
+                </li>
+                <li>
+                <label class="select-box__option" for="1" aria-hidden="aria-hidden">2020</label>
+                </li>
+                <li>
+                <label class="select-box__option" for="2" aria-hidden="aria-hidden">2019</label>
+                </li>
+                <li>
+                <label class="select-box__option" for="3" aria-hidden="aria-hidden">2018</label>
+                </li>
+                <li>
+                <label class="select-box__option" for="4" aria-hidden="aria-hidden">2017</label>
+                </li>
+                <li>
+                    <label class="select-box__option" for="5" aria-hidden="aria-hidden">2016</label>
+                </li>
+                </ul>
+                </div>
+                <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+                <script id="rendered-js">
+                    </script>
+                </div>
+        </div>
+    </div>
+<div id="year2020">
+    <iframe src="paper1/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
     <iframe src="paper1/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
     <iframe src="paper2/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-   <iframe src="paper3/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-   <iframe src="paper4/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-  <iframe src="paper5/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
- <iframe src="paper6/year2019.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-<iframe src="paper6/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper7/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper8/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper9/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper10/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
- <iframe src="paper11/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-<iframe src="paper11/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper12/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper13/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper14/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper15/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper16/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
- <iframe src="paper17/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-<iframe src="paper17/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-<iframe src="paper18/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper3/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper4/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper5/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+</div>
+<div id="year2019">
+    <iframe src="paper6/year2019.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+    <iframe src="paper6/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper7/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper8/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper9/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper10/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+</div>
+<div id="year2018">
+    <iframe src="paper11/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+    <iframe src="paper11/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper12/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper13/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper14/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper15/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper16/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+</div>
+<div id="year2017">
+    <iframe src="paper17/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+    <iframe src="paper17/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper18/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+</div>
+
 
     </div>
     
