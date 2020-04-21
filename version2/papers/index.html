@@ -422,9 +422,6 @@ content: "\e01d";
             .second{
               height:fit-content;
               display:flex;
-              flex-direction:column;
-              justify-content:center;
-              align-items:center;
               font-family: 'Roboto', sans-serif;
             }
             
@@ -755,12 +752,12 @@ content: "\e01d";
     
     </div>
     <div style="margin-left: 1rem;">
-    <div style="display: flex;height: 15rem;margin-top: 2rem;">
+    <div style="display: flex;height: 5rem;margin-top: 2rem;">
         <div style="flex: 3;margin-top: 0.5rem;">
             <div class="second" translate="no">
-                <div class="wrapper">
+                <div class="wrapper" style="margin-left: 0;">
                     <nav class="tabs">
-                    <div class="selector" style="width: 132.925px; left: 0px;"></div>
+                    <div class="selector" style="width: fit-content; margin-left: 0px;"></div>
                     <a href="#" class="active" onclick="f_areas(-1)">All Areas</a>
                     <a href="#" class="" onclick="f_areas(1)">Software Engineering</a>
                     <a href="#" class="" onclick="f_areas(2)">Educational Technologies</a>
@@ -795,7 +792,7 @@ content: "\e01d";
                     
             </div>
         </div>
-        <div style="flex: 1;padding-right: 17rem;">
+        <div style="flex: 1;padding-right: 10rem;">
             <div class="first" translate="no">
                 <div class="select-box" style="width: 100%;">
                 <div class="select-box__current" tabindex="1">
