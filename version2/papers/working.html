@@ -4,136 +4,80 @@
     <meta name="apple-mobile-web-app-title" content="CodePen">
     <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
     <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-    <title>CodePen - Pure CSS Select Box</title>
+    <title>CodePen - Elastic Tabs</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <style>
-    html,
-    body {
-      min-height: 100%;
-      margin: 0;
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    
+    .second{
+      height:fit-content;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      font-family: 'Roboto', sans-serif;
     }
     
-    .first{
-      box-sizing: border-box;
+    h2{
+      margin:0px;
+      text-transform: uppercase;
     }
     
-    .select-box {
-      position: relative;
-      display: block;
-      width: 100%;
-      margin: 0 auto;
-      font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
-      font-size: 18px;
-      color: #60666d;
-    }
-    @media (min-width: 768px) {
-      .select-box {
-        width: 70%;
-      }
-    }
-    @media (min-width: 992px) {
-      .select-box {
-        width: 50%;
-      }
-    }
-    @media (min-width: 1200px) {
-      .select-box {
-        width: 30%;
-      }
-    }
-    .select-box__current {
-      position: relative;
-      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      outline: none;
-    }
-    .select-box__current:focus + .select-box__list {
-      opacity: 1;
-      -webkit-animation-name: none;
-              animation-name: none;
-    }
-    .select-box__current:focus + .select-box__list .select-box__option {
-      cursor: pointer;
-    }
-    .select-box__current:focus .select-box__icon {
-      -webkit-transform: translateY(-50%) rotate(180deg);
-              transform: translateY(-50%) rotate(180deg);
-    }
-    .select-box__icon {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      width: 20px;
-      opacity: 0.3;
-      -webkit-transition: 0.2s ease;
-      transition: 0.2s ease;
-    }
-    .select-box__value {
-      display: -webkit-box;
-      display: flex;
-    }
-    .select-box__input {
-      display: none;
-    }
-    .select-box__input:checked + .select-box__input-text {
-      display: block;
-    }
-    .select-box__input-text {
-      display: none;
-      width: 100%;
-      margin: 0;
-      padding: 15px;
-      background-color: #fff;
-    }
-    .select-box__list {
-      position: absolute;
-      width: 100%;
-      padding: 0;
-      list-style: none;
-      opacity: 0;
-      -webkit-animation-name: HideList;
-              animation-name: HideList;
-      -webkit-animation-duration: 0.5s;
-              animation-duration: 0.5s;
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s;
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation-timing-function: step-start;
-              animation-timing-function: step-start;
-      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-    }
-    .select-box__option {
-      display: block;
-      padding: 15px;
-      background-color: #fff;
-    }
-    .select-box__option:hover, .select-box__option:focus {
-      color: #546c84;
-      background-color: #fbfbfb;
+    h6{
+      margin:0px;
+      color:#777;
     }
     
-    @-webkit-keyframes HideList {
-      from {
-        -webkit-transform: scaleY(1);
-                transform: scaleY(1);
-      }
-      to {
-        -webkit-transform: scaleY(0);
-                transform: scaleY(0);
-      }
+    .wrapper{
+      text-align:center;
     }
     
-    @keyframes HideList {
-      from {
-        -webkit-transform: scaleY(1);
-                transform: scaleY(1);
-      }
-      to {
-        -webkit-transform: scaleY(0);
-                transform: scaleY(0);
-      }
+    .tabs{
+      font-size:15px;
+      padding:0px;
+      list-style:none;
+      background:#fff;
+      box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+      display:inline-block;
+      border-radius:50px;
+      position:relative;
+    }
+    
+    .tabs a{
+      text-decoration:none;
+      color: #777;
+      text-transform:uppercase;
+      padding:10px 20px;
+      display:inline-block;
+      position:relative;
+      z-index:1;
+      transition-duration:0.6s;
+    }
+    
+    .tabs a.active{
+      color:#fff;
+    }
+    
+    .tabs a i{
+      margin-right:5px;
+    }
+    
+    .tabs .selector{
+      height:100%;
+      display:inline-block;
+      position:absolute;
+      left:0px;
+      top:0px;
+      z-index:1;
+      border-radius:50px;
+      transition-duration:0.6s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      
+      background: #05abe0;
+      background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+      background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+      background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
     }
     </style>
     <script>
@@ -145,53 +89,42 @@
       }
     </script>
     </head>
-    <body translate="no">
-    <div class="first">
-    <div class="select-box">
-    <div class="select-box__current" tabindex="1">
-    <div class="select-box__value">
-    <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked">
-    <p class="select-box__input-text">Cream</p>
+    <body>
+    <div class="second" translate="no">
+        <div class="wrapper">
+            <nav class="tabs">
+            <div class="selector" style="width: 132.925px; left: 0px;"></div>
+            <a href="#" class="active">All Areas</a>
+            <a href="#" class="">Software Engineering</a>
+            <a href="#" class="">Educational Technologies</a>
+            <a href="#" class="">Human Computer Interaction</a>
+            </nav>
+            </div>
+            <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script id="rendered-js">
+            var tabs = $('.tabs');
+            var selector = $('.tabs').find('a').length;
+            var activeItem = tabs.find('.active');
+            var activeWidth = activeItem.innerWidth();
+            $(".selector").css({
+              "left": activeItem.position.left + "px",
+              "width": activeWidth + "px" });
+            
+            
+            $(".tabs").on("click", "a", function (e) {
+              e.preventDefault();
+              $('.tabs a').removeClass("active");
+              $(this).addClass('active');
+              var activeWidth = $(this).innerWidth();
+              var itemPos = $(this).position();
+              $(".selector").css({
+                "left": itemPos.left + "px",
+                "width": activeWidth + "px" });
+            
+            });
+                </script>
+            
+            
     </div>
-    <div class="select-box__value">
-    <input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked">
-    <p class="select-box__input-text">Cheese</p>
-    </div>
-    <div class="select-box__value">
-    <input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked">
-    <p class="select-box__input-text">Milk</p>
-    </div>
-    <div class="select-box__value">
-    <input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked">
-    <p class="select-box__input-text">Honey</p>
-    </div>
-    <div class="select-box__value">
-    <input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked">
-    <p class="select-box__input-text">Toast</p>
-    </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
-    </div>
-    <ul class="select-box__list">
-    <li>
-    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Cream</label>
-    </li>
-    <li>
-    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Cheese</label>
-    </li>
-    <li>
-    <label class="select-box__option" for="2" aria-hidden="aria-hidden">Milk</label>
-    </li>
-    <li>
-    <label class="select-box__option" for="3" aria-hidden="aria-hidden">Honey</label>
-    </li>
-    <li>
-    <label class="select-box__option" for="4" aria-hidden="aria-hidden">Toast</label>
-    </li>
-    </ul>
-    </div>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-    <script id="rendered-js">
-        </script>
-    
-    </div>
-
     </body></html>

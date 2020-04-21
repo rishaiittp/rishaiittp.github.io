@@ -416,6 +416,80 @@ content: "\e01d";
         }
       }
       </style>
+          <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+            
+            .second{
+              height:fit-content;
+              display:flex;
+              flex-direction:column;
+              justify-content:center;
+              align-items:center;
+              font-family: 'Roboto', sans-serif;
+            }
+            
+            h2{
+              margin:0px;
+              text-transform: uppercase;
+            }
+            
+            h6{
+              margin:0px;
+              color:#777;
+            }
+            
+            .wrapper{
+              text-align:center;
+            }
+            
+            .tabs{
+              font-size:15px;
+              padding:0px;
+              list-style:none;
+              background:#fff;
+              box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+              display:inline-block;
+              border-radius:50px;
+              position:relative;
+            }
+            
+            .tabs a{
+              text-decoration:none;
+              color: #777;
+              text-transform:uppercase;
+              padding:10px 20px;
+              display:inline-block;
+              position:relative;
+              z-index:1;
+              transition-duration:0.6s;
+            }
+            
+            .tabs a.active{
+              color:#fff;
+            }
+            
+            .tabs a i{
+              margin-right:5px;
+            }
+            
+            .tabs .selector{
+              height:100%;
+              display:inline-block;
+              position:absolute;
+              left:0px;
+              top:0px;
+              z-index:1;
+              border-radius:50px;
+              transition-duration:0.6s;
+              transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              
+              background: #05abe0;
+              background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+              background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+              background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+            }
+            </style>
     <script>
       window.console = window.console || function(t) {};
     </script>
@@ -462,7 +536,127 @@ content: "\e01d";
             }
         }
     </script>
-
+    <script>
+        function f_areas(val) 
+        {
+            switch (val) {
+                case 1:
+                    var len1 = document.getElementsByClassName('se').length;
+                    for(var i=0; i< len1; i++)
+                    {
+                        document.getElementsByClassName('se')[i].style.display = 'block';
+                    }
+                    var len2 = document.getElementsByClassName('ed').length;
+                    for(var i=0; i< len2; i++)
+                    {
+                        document.getElementsByClassName('ed')[i].style.display = 'none';
+                    }
+                    var len3 = document.getElementsByClassName('hc').length;
+                    for(var i=0; i< len3; i++)
+                    {
+                        document.getElementsByClassName('hc')[i].style.display = 'none';
+                    }
+                    var len4 = document.querySelectorAll('.se.ed').length;
+                    for(var i=0; i< len4; i++)
+                    {
+                        document.querySelectorAll('.se.ed')[i].style.display = 'block';
+                    }
+                    var len5 = document.querySelectorAll('.se.hc').length;
+                    for(var i=0; i< len5; i++)
+                    {
+                        document.querySelectorAll('.se.hc')[i].style.display = 'block';
+                    }
+                    var len6 = document.querySelectorAll('.se.ed.hc').length;
+                    for(var i=0; i< len6; i++)
+                    {
+                        document.querySelectorAll('.se.ed.hc')[i].style.display = 'block';
+                    }
+                    break;
+                case 2:
+                    var len1 = document.getElementsByClassName('se').length;
+                    for(var i=0; i< len1; i++)
+                    {
+                        document.getElementsByClassName('se')[i].style.display = 'none';
+                    }
+                    var len2 = document.getElementsByClassName('ed').length;
+                    for(var i=0; i< len2; i++)
+                    {
+                        document.getElementsByClassName('ed')[i].style.display = 'block';
+                    }
+                    var len3 = document.getElementsByClassName('hc').length;
+                    for(var i=0; i< len3; i++)
+                    {
+                        document.getElementsByClassName('hc')[i].style.display = 'none';
+                    }
+                    var len4 = document.querySelectorAll('.se.ed').length;
+                    for(var i=0; i< len4; i++)
+                    {
+                        document.querySelectorAll('.se.ed')[i].style.display = 'block';
+                    }
+                    var len5 = document.querySelectorAll('.ed.hc').length;
+                    for(var i=0; i< len5; i++)
+                    {
+                        document.querySelectorAll('.ed.hc')[i].style.display = 'block';
+                    }
+                    var len6 = document.querySelectorAll('.se.ed.hc').length;
+                    for(var i=0; i< len6; i++)
+                    {
+                        document.querySelectorAll('.se.ed.hc')[i].style.display = 'block';
+                    }
+                    break;
+                case 3:
+                    var len1 = document.getElementsByClassName('se').length;
+                    for(var i=0; i< len1; i++)
+                    {
+                        document.getElementsByClassName('se')[i].style.display = 'none';
+                    }
+                    var len2 = document.getElementsByClassName('ed').length;
+                    for(var i=0; i< len2; i++)
+                    {
+                        document.getElementsByClassName('ed')[i].style.display = 'none';
+                    }
+                    var len3 = document.getElementsByClassName('hc').length;
+                    for(var i=0; i< len3; i++)
+                    {
+                        document.getElementsByClassName('hc')[i].style.display = 'block';
+                    }
+                    var len4 = document.querySelectorAll('.hc.ed').length;
+                    for(var i=0; i< len4; i++)
+                    {
+                        document.querySelectorAll('.hc.ed')[i].style.display = 'block';
+                    }
+                    var len5 = document.querySelectorAll('.se.hc').length;
+                    for(var i=0; i< len5; i++)
+                    {
+                        document.querySelectorAll('.se.hc')[i].style.display = 'block';
+                    }
+                    var len6 = document.querySelectorAll('.se.ed.hc').length;
+                    for(var i=0; i< len6; i++)
+                    {
+                        document.querySelectorAll('.se.ed.hc')[i].style.display = 'block';
+                    }
+                    break;
+            
+                default:
+                    var len1 = document.getElementsByClassName('se').length;
+                    for(var i=0; i< len1; i++)
+                    {
+                        document.getElementsByClassName('se')[i].style.display = 'block';
+                    }
+                    var len2 = document.getElementsByClassName('ed').length;
+                    for(var i=0; i< len2; i++)
+                    {
+                        document.getElementsByClassName('ed')[i].style.display = 'block';
+                    }
+                    var len3 = document.getElementsByClassName('hc').length;
+                    for(var i=0; i< len3; i++)
+                    {
+                        document.getElementsByClassName('hc')[i].style.display = 'block';
+                    }
+                    break;
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -562,8 +756,44 @@ content: "\e01d";
     </div>
     <div style="margin-left: 1rem;">
     <div style="display: flex;height: 15rem;margin-top: 2rem;">
-        <div style="flex: 3;">
-
+        <div style="flex: 3;margin-top: 0.5rem;">
+            <div class="second" translate="no">
+                <div class="wrapper">
+                    <nav class="tabs">
+                    <div class="selector" style="width: 132.925px; left: 0px;"></div>
+                    <a href="#" class="active" onclick="f_areas(-1)">All Areas</a>
+                    <a href="#" class="" onclick="f_areas(1)">Software Engineering</a>
+                    <a href="#" class="" onclick="f_areas(2)">Educational Technologies</a>
+                    <a href="#" class="" onclick="f_areas(3)">Human Computer Interaction</a>
+                    </nav>
+                    </div>
+                    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <script id="rendered-js">
+                    var tabs = $('.tabs');
+                    var selector = $('.tabs').find('a').length;
+                    var activeItem = tabs.find('.active');
+                    var activeWidth = activeItem.innerWidth();
+                    $(".selector").css({
+                      "left": activeItem.position.left + "px",
+                      "width": activeWidth + "px" });
+                    
+                    
+                    $(".tabs").on("click", "a", function (e) {
+                      e.preventDefault();
+                      $('.tabs a').removeClass("active");
+                      $(this).addClass('active');
+                      var activeWidth = $(this).innerWidth();
+                      var itemPos = $(this).position();
+                      $(".selector").css({
+                        "left": itemPos.left + "px",
+                        "width": activeWidth + "px" });
+                    
+                    });
+                        </script>
+                    
+                    
+            </div>
         </div>
         <div style="flex: 1;padding-right: 17rem;">
             <div class="first" translate="no">
@@ -624,34 +854,34 @@ content: "\e01d";
         </div>
     </div>
 <div id="year2020">
-    <iframe src="paper1/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-    <iframe src="paper1/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper2/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper3/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper4/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper5/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper1/year.html"  frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+    <iframe src="paper1/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper2/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper3/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper4/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper5/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
 </div>
 <div id="year2019">
     <iframe src="paper6/year2019.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-    <iframe src="paper6/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper7/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper8/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper9/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper10/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper6/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed" scrolling="no"></iframe>
+    <iframe src="paper7/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed" scrolling="no"></iframe>
+    <iframe src="paper8/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper9/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper10/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
 </div>
 <div id="year2018">
     <iframe src="paper11/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-    <iframe src="paper11/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper12/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper13/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper14/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper15/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper16/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper11/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed" scrolling="no"></iframe>
+    <iframe src="paper12/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper13/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper14/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed se" scrolling="no"></iframe>
+    <iframe src="paper15/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed se" scrolling="no"></iframe>
+    <iframe src="paper16/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="ed se" scrolling="no"></iframe>
 </div>
 <div id="year2017">
     <iframe src="paper17/year.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-    <iframe src="paper17/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
-    <iframe src="paper18/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" scrolling="no"></iframe>
+    <iframe src="paper17/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
+    <iframe src="paper18/index.html" frameborder="0" style="width: 100%;height: 28rem;overflow: hidden;" class="se" scrolling="no"></iframe>
 </div>
 
 
