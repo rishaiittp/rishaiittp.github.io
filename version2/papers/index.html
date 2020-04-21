@@ -440,8 +440,7 @@ content: "\e01d";
               text-decoration:none;
               color: #777;
               text-transform:uppercase;
-              padding:10px 20px;
-              display:inline-block;
+              text-align: center;
               position:relative;
               z-index:1;
               transition-duration:0.6s;
@@ -457,7 +456,7 @@ content: "\e01d";
             
             .tabs .selector{
               height:100%;
-              display:inline-block;
+              display:flex;
               position:absolute;
               left:0px;
               top:0px;
@@ -465,7 +464,6 @@ content: "\e01d";
               border-radius:50px;
               transition-duration:0.6s;
               transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              
               background: #05abe0;
               background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
               background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
@@ -738,16 +736,16 @@ content: "\e01d";
     
     </div>
     <div style="margin-left: 1rem;">
-    <div style="display: flex;height: 5rem;margin-top: 2rem;">
+    <div style="display: flex;height: 5rem;margin-top: 2rem;margin-right: 15rem;">
         <div style="flex: 3;margin-top: 0.5rem;">
             <div class="second" translate="no">
                 <div class="wrapper" style="margin-left: 0;">
-                    <nav class="tabs">
-                    <div class="selector" style="width: fit-content; margin-left: 0px;"></div>
-                    <a href="#" class="active" onclick="f_areas(-1)">All Areas</a>
-                    <a href="#" class="" onclick="f_areas(1)">Software Engineering</a>
-                    <a href="#" class="" onclick="f_areas(2)">Educational Technologies</a>
-                    <a href="#" class="" onclick="f_areas(3)">Human Computer Interaction</a>
+                    <nav class="tabs" style="display: flex;">
+                    <div class="selector" style="width: fit-content;margin-left: 0px;"></div>
+                    <a href="#" class="active" onclick="f_areas(-1)" style="flex: 1;margin: auto 0;">All Areas</a>
+                    <a href="#" class="" onclick="f_areas(1)" style="flex: 1;margin: auto 0;">Software Engineering</a>
+                    <a href="#" class="" onclick="f_areas(2)" style="flex: 1;margin: auto 0;">Educational Technologies</a>
+                    <a href="#" class="" onclick="f_areas(3)" style="flex: 1;margin: auto 0;">Human Computer Interaction</a>
                     </nav>
                     </div>
                     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
@@ -778,7 +776,7 @@ content: "\e01d";
                     
             </div>
         </div>
-        <div style="flex: 1;padding-right: 10rem;">
+        <div style="flex: 2;">
             <div class="first" translate="no">
                 <div class="select-box" style="width: 100%;">
                 <div class="select-box__current" tabindex="1">
