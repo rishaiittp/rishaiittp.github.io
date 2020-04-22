@@ -1,0 +1,130 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Elastic Tabs</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    
+    .second{
+      height:fit-content;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    h2{
+      margin:0px;
+      text-transform: uppercase;
+    }
+    
+    h6{
+      margin:0px;
+      color:#777;
+    }
+    
+    .wrapper{
+      text-align:center;
+    }
+    
+    .tabs{
+      font-size:15px;
+      padding:0px;
+      list-style:none;
+      background:#fff;
+      box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+      display:inline-block;
+      border-radius:50px;
+      position:relative;
+    }
+    
+    .tabs a{
+      text-decoration:none;
+      color: #777;
+      text-transform:uppercase;
+      padding:10px 20px;
+      display:inline-block;
+      position:relative;
+      z-index:1;
+      transition-duration:0.6s;
+    }
+    
+    .tabs a.active{
+      color:#fff;
+    }
+    
+    .tabs a i{
+      margin-right:5px;
+    }
+    
+    .tabs .selector{
+      height:100%;
+      display:inline-block;
+      position:absolute;
+      left:0px;
+      top:0px;
+      z-index:1;
+      border-radius:50px;
+      transition-duration:0.6s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      
+      background: #05abe0;
+      background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+      background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+      background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body>
+    <div class="second" translate="no">
+        <div class="wrapper">
+            <nav class="tabs">
+            <div class="selector" style="width: 132.925px; left: 0px;"></div>
+            <a href="#" class="active">All Areas</a>
+            <a href="#" class="">Software Engineering</a>
+            <a href="#" class="">Educational Technologies</a>
+            <a href="#" class="">Human Computer Interaction</a>
+            </nav>
+            </div>
+            <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script id="rendered-js">
+            var tabs = $('.tabs');
+            var selector = $('.tabs').find('a').length;
+            var activeItem = tabs.find('.active');
+            var activeWidth = activeItem.innerWidth();
+            $(".selector").css({
+              "left": activeItem.position.left + "px",
+              "width": activeWidth + "px" });
+            
+            
+            $(".tabs").on("click", "a", function (e) {
+              e.preventDefault();
+              $('.tabs a').removeClass("active");
+              $(this).addClass('active');
+              var activeWidth = $(this).innerWidth();
+              var itemPos = $(this).position();
+              $(".selector").css({
+                "left": itemPos.left + "px",
+                "width": activeWidth + "px" });
+            
+            });
+                </script>
+            
+            
+    </div>
+    </body></html>

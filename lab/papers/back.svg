@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="743px" height="585px" viewBox="0 0 743 585" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>250A4AE2-3735-477B-8BDE-9E6217719ACC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="42.9410498%" y1="34.8752962%" x2="94.1887315%" y2="86.6937852%" id="linearGradient-1">
+            <stop stop-color="#9D5CFF" offset="0%"></stop>
+            <stop stop-color="#6D2FCC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="114.205139%" x2="43.2760129%" y2="-29.0478419%" id="linearGradient-2">
+            <stop stop-color="#6D2FCC" offset="0%"></stop>
+            <stop stop-color="#9D5CFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Checkout-Template" transform="translate(-1177.000000, 0.000000)">
+            <g id="Purple-Shape_Top-Right" transform="translate(1177.000000, -483.000000)">
+                <path d="M0,0 L0,485.728153 C0,561.235998 39.8216607,631.149544 104.774786,669.681859 L847,1110 L847,0 L0,0 Z" id="Fill-1" fill="url(#linearGradient-1)"></path>
+                <path d="M779.083159,640.054099 L0,1102.19959 L0,1164 L779.083159,701.854513 C857.14474,655.549058 905,571.536379 905,480.800414 L905,419 C905,509.735965 857.14474,593.748644 779.083159,640.054099" id="Fill-1-Copy-4" fill="url(#linearGradient-2)" transform="translate(452.500000, 791.500000) scale(-1, 1) translate(-452.500000, -791.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
