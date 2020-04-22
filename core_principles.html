@@ -28,10 +28,11 @@
             width: 98%;
         }
         .button {
+            border: none;
+  border-radius: 1rem;
   display: inline-block;
   border-radius: 4px;
-  background-color: #000;
-  border: none;
+  background-color: #53588b;
   color: #FFFFFF;
   text-align: center;
   font-size: 1.5rem;
@@ -299,8 +300,17 @@ content: "\e01d";
     border: none;
     border-radius: 0;
 }
+@font-face {
+    font-family: garamond;
+    src: url('garamond/Garamond Medium Italic.ttf');
+  }
+  #title:hover{
+    border: none;
+    border-radius: 0;
+  }
   </style>
   
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
@@ -316,28 +326,36 @@ content: "\e01d";
                 <span></span>
             </div>
         </button>
-       <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
+        <div class="menu-logo" >
+            <div class="navbar-brand" style="margin-left: 1rem;">
+                <span class="navbar-logo" style="margin-left: 0;">
                     <a href="index.html">
                          <img src="favicon.png" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap" ><a class="navbar-caption text-white display-4" id="b1" href="index.html" style="border: none;">
-                        RISHA</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" style="font-family: garamond;font-style: italic;" href="index.html" style="border: none;" id="title">
+                    Research In Intelligent Software & Human Analytics (RISHA) Lab</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="projects/index.html">Projects</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="version2/index.html">Lab</a></li><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="version2/papers/index.html">Papers
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="version2/team/about.html">Team</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Blog
-                    </a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Teaching
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="lab/index.html">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="lab/papers/index.html">Papers
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="lab/team/about.html">Team</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Blog</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Teaching
                     </a></li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Bio</a></li>
-                
+            
                 </ul>
             
         </div>
@@ -358,7 +376,7 @@ content: "\e01d";
             </a>
     
     
-            <a href="joinRisha.html" class="sh-side-options-item sh-accent-color">
+            <a href="JoinRishaLab.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -367,7 +385,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="index2.html" class="sh-side-options-item sh-accent-color">
+            <a href="core_principles.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-users-cog"></i>
                 </div>
@@ -385,7 +403,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="hangouts2.html" class="sh-side-options-item sh-accent-color">
+            <a href="hangouts.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-photo-video"></i>
                 </div>
@@ -407,10 +425,10 @@ content: "\e01d";
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
                 <blockquote>
-                    <h2>Core Principles and Guidelines</h2>
+                    <h2 style="font-family: 'Nunito',sans-serif;font-style: normal;color: #53588B;">Core Principles and Guidelines</h2>
         </blockquote>
             </div>
-            <button class="button" style="vertical-align:middle;"><a href="assets/1-RISHA Research Lab Core Principles and Guidelines.pdf" style="color: #456FFF;">Download PDF!</a></button>
+            <button class="button" style="vertical-align:middle;"><a href="assets/1-RISHA Research Lab Core Principles and Guidelines.pdf" style="color: #fff;">Download PDF!</a></button>
 
         </div>
         
@@ -427,10 +445,10 @@ content: "\e01d";
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
                 <blockquote>
-                    <h2>Detailed Guidelines RISHA Research Lab</h2>
+                    <h2 style="font-family: 'Nunito',sans-serif;font-style: normal;color: #53588B;">Detailed Guidelines RISHA Research Lab</h2>
         </blockquote>
             </div>
-            <button class="button" style="vertical-align:middle;margin-left: 5rem;"><a href="assets/2 - Detailed Guidelines ISHA Research Lab.pdf" style="color: #456FFF;">Download PDF!</a></button>
+            <button class="button" style="vertical-align:middle;margin-left: 5rem;"><a href="assets/2 - Detailed Guidelines ISHA Research Lab.pdf" style="color: #fff;">Download PDF!</a></button>
 
         </div>
         

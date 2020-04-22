@@ -145,9 +145,31 @@
   </script>
   <script>
     setInterval(() => {
-      document.getElementById('next').click();
-    }, 2000);
+      if(document.getElementById('prev').style.display == 'none')
+      {
+        document.getElementById('next').click();
+      }
+    }, 5000);
   </script>
+  <script>
+    function f1() {
+     if(document.getElementById('curr').innerHTML == 'Tap to disable auto slide')
+     {
+      document.getElementById('curr').innerHTML = 'Tap to enable auto slide'
+      document.getElementById('prev').style.display = 'none';
+      document.getElementById('next').style.display = 'none';
+      document.getElementById('prev').style.display = 'block';
+      document.getElementById('next').style.display = 'block';
+     }
+     else if(document.getElementById('curr').innerHTML == 'Tap to enable auto slide')
+     {
+      document.getElementById('curr').innerHTML = 'Tap to disable auto slide';
+      document.getElementById('prev').style.display = 'none';
+      document.getElementById('next').style.display = 'none';
+     }
+    }
+  </script>
+  
   
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   </head>
@@ -155,28 +177,32 @@
     <p style="text-align: center;color: #53588B;font-size: 1.5rem;margin-top: 1rem;font-family: 'Nunito',sans-serif;">Research Areas</p>
   <div class="card">
   <div class="products" style="height: 340px;">
-  <div class="product" product-id="1">
-      <h1 class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Educational Technologies</h1>
-  <p class="description" style="font-family: 'Nunito',sans-serif;">Quality, Scale & Variety in Instructional Design, Ontologies, Gamification, Personalized Learning, Virtual & Augumented Reality for Story Telling and Labs, Computing Research for Education</p>
+  <div class="product" product-id="1" >
+      <a href="https://researchweb.iiit.ac.in/~sridhar_ch/research.html" target="blank" class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Educational Technologies</a>
+  <p class="description" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Quality, Scale & Variety in Instructional Design, Ontologies, Gamification, Personalized Learning, Virtual & Augumented Reality for Story Telling and Labs, Computing Research for Education</p>
   </div>
-  <div class="product" product-id="2">
-  <h1 class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Machine Learning</h1>
-  <p class="description" style="font-family: 'Nunito',sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
+  <div class="product" product-id="2" >
+  <a href="https://researchweb.iiit.ac.in/~sridhar_ch/research.html" target="blank" class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Machine Learning</a>
+  <p class="description" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
   </div>
-  <div class="product" product-id="3">
-  <h1 class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Cloud Computing</h1>
-  <p class="description" style="font-family: 'Nunito',sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
+  <div class="product" product-id="3" >
+  <a href="https://researchweb.iiit.ac.in/~sridhar_ch/research.html" target="blank" class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Cloud Computing</a>
+  <p class="description" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
   </div>
-  <div class="product active" product-id="4">
-  <h1 class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Software Engineering</h1>
-  <p class="description" style="font-family: 'Nunito',sans-serif;">Empirical Software Engineering, Software Quality & Software Reuse, Patterns, Software Product Lines, Software Architecture, Requirements Engineering, Mobile Applications</p>
+  <div class="product active" product-id="4" >
+  <a href="https://researchweb.iiit.ac.in/~sridhar_ch/research.html" target="blank" class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Software Engineering</a>
+  <p class="description" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Empirical Software Engineering, Software Quality & Software Reuse, Patterns, Software Product Lines, Software Architecture, Requirements Engineering, Mobile Applications</p>
   </div>
-  <div class="product" product-id="5">
-  <h1 class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Human Computer Interaction</h1>
-  <p class="description" style="font-family: 'Nunito',sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
+  <div class="product" product-id="5" >
+  <a href="https://researchweb.iiit.ac.in/~sridhar_ch/research.html" target="blank" class="title" style="color: #53588B;font-family: 'Nunito',sans-serif;">Human Computer Interaction</a>
+  <p class="description" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Software engineering is the systematic application of engineering approaches to the development of software.</p>
   </div>
   </div>
-  <div class="footer" style="display: none;"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666" style="color: rgb(237, 141, 31);">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666" style="color: rgb(237, 141, 31);">Next</a></div>
+  <div class="footer" style="">
+    <a class="btn" id="prev" href="#" ripple="" ripple-color="#666666" style="color: #53588b;display: none;">Prev</a>
+    <a class="btn" id="curr" href="#" ripple=""  style="color: #A9ABC5;font-weight: bolder;font-size: 0.7rem;padding: auto;margin: auto;" onclick="f1()">Tap to disable auto slide</a>
+    <a class="btn" id="next" href="#" ripple="" ripple-color="#666666" style="color: #53588b;display: none;">Next</a>
+  </div>
   </div>
   <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

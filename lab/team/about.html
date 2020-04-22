@@ -302,13 +302,21 @@
       .icon-eyeglass:before {
 content: "\e01d";
 }
+@font-face {
+    font-family: garamond;
+    src: url('garamond/Garamond Medium Italic.ttf');
+  }
+  #title:hover{
+    border: none;
+    border-radius: 0;
+  }
   </style>
 </head>
 <body>
-    
+    <section id="top-1" style="display:none;" class="engine"><a href="#"></a></section>
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
    
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #FFF;">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #F2F2F2;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #252525;">
             <div class="hamburger">
                 <span></span>
@@ -318,20 +326,28 @@ content: "\e01d";
             </div>
         </button>
         <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
+            <div class="navbar-brand" style="margin-left: 1rem;">
+                <span class="navbar-logo" style="margin-left: 0;">
                     <a href="../../index.html">
                          <img src="../favicon.png" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="../../index.html" style="border: none;">
-                        RISHA</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4"
+                     style="font-family: garamond;font-style: italic;" href="../../index.html" style="border: none;" id="title">
+                    Research In Intelligent Software & Human Analytics (RISHA) Lab</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="../../index.html">Home</a>
+                </li>
+                
+                <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="../../projects/index.html">Projects</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="../index.html">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="../papers/index.html">Papers
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="../index.html">Lab</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="../papers/index.html">Papers
                     </a>
                 </li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="#">Team</a></li>
@@ -346,7 +362,7 @@ content: "\e01d";
         </div>
     </nav>
 </section>
-<section class="engine"></section><section class="team1 cid-rNnRkBHndV" id="team1-0" style="background: #f2f2f2;">
+<section class="team1 cid-rNnRkBHndV" id="team1-0" style="background: #fff;">
     <div class="sh-side-options" style="transition: all 0.3s ease-in-out 0s;">
         <div class="sh-side-options-container" data-url="https://jevelin.shufflehound.com/hello/">
         
@@ -361,7 +377,7 @@ content: "\e01d";
             </a>
     
     
-            <a href="../../joinRisha.html" class="sh-side-options-item sh-accent-color">
+            <a href="../../JoinRishaLab.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -370,7 +386,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="../../index2.html" class="sh-side-options-item sh-accent-color">
+            <a href="../../core_principles.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-users-cog"></i>
                 </div>
@@ -388,7 +404,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="../../hangouts2.html" class="sh-side-options-item sh-accent-color">
+            <a href="../../hangouts.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-photo-video"></i>
                 </div>
@@ -401,148 +417,29 @@ content: "\e01d";
     
     </div>
     <div style="margin-left: 1rem;">
-   
-      <style>
-        @import "https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700";
-        *, *:after, *:before {
-          margin: 0;
-          padding: 0;
-        }
-        
-        .svg-container {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: -1;
-        }
-        
-        svg path {
-          transition: .1s;
-        }
-        svg:hover path {
-          d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
-        }
-        
-        body {
-          background: #fff;
-          color: #333;
-          font-family: 'Ubuntu', sans-serif;
-          position: relative;
-        }
-        
-        h3 {
-          font-weight: 400;
-        }
-        
-        header {
-          color: #fff;
-          padding-top: 2vw;
-          padding-bottom: 0vw;
-          text-align: center;
-        }
-        
-        main {
-          background: linear-gradient(to bottom, #ffffff 0%, #dddee1 100%);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-          padding: 10vh 0 80vh;
-          position: relative;
-          text-align: center;
-          overflow: hidden;
-        }
-        main::after {
-          border-right: 2px dashed #eee;
-          content: '';
-          position: absolute;
-          top: calc(10vh + 1.618em);
-          bottom: 0;
-          left: 50%;
-          width: 2px;
-          height: 100%;
-        }
-        
-        footer {
-          background: #dddee1;
-          padding: 5vh 0;
-          text-align: center;
-          position: relative;
-        }
-        
-        small {
-          opacity: .5;
-          font-weight: 300;
-        }
-        small a {
-          color: inherit;
-        }
-        </style>
-        <script>
-          window.console = window.console || function(t) {};
-        </script>
-        <script>
-          if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-          }
-        </script>
-        </head>
-        <body translate="no">
-        
-        <div class="svg-container">
-        
-        <svg viewBox="0 0 800 400" class="svg">
-        <path id="curve" fill="#000" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z">
-        </path>
-        </svg>
-        </div>
-        <header>
-            <iframe src="head.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
-            <div style="display: flex;" style="height: 32rem;">
+            <!-- <iframe src="head.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe> -->
+        <div style="display: flex;height: 15rem;margin-left: 9rem;">
             <div style="flex: 1;">
-                <iframe src="info1.html" frameborder="0" style="width: 100%;height: 30rem;"></iframe>
+                <iframe src="info1.html" frameborder="0" style="width: 100%;height: 15rem;"></iframe>
             </div>
             <div style="flex: 1;">
-                <iframe src="info2.html" frameborder="0" style="width: 100%;height: 30rem;"></iframe>
+                <iframe src="info2.html" frameborder="0" style="width: 100%;height: 15rem;"></iframe>
             </div>
             <div style="flex: 1;">
-                <iframe src="info3.html" frameborder="0" style="width: 100%;height: 30rem;"></iframe>
+                <iframe src="info3.html" frameborder="0" style="width: 100%;height: 15rem;"></iframe>
             </div>
         </div>
-        </header>
-        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-        <script id="rendered-js">
-        (function () {
-          var $curve = document.getElementById("curve");
-          var last_known_scroll_position = 0;
-          var defaultCurveValue = 350;
-          var curveRate = 3;
-          var ticking = false;
-          var curveValue;
-          function scrollEvent(scrollPos) {
-            if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
-              curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
-              $curve.setAttribute(
-              "d",
-              "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z");
+        <div style="display: flex;height: 10rem;margin-left: 9rem;margin-top: 1rem;">
+            <div style="flex: 1;">
+            </div>
+            <div style="flex: 1;">
+                <iframe src="head.html" frameborder="0" style="width: 100%;height: 10rem;"></iframe>
+            </div>
+            <div style="flex: 1;">
         
-            }
-          }
-        
-          window.addEventListener("scroll", function (e) {
-            last_known_scroll_position = window.scrollY;
-        
-            if (!ticking) {
-              window.requestAnimationFrame(function () {
-                scrollEvent(last_known_scroll_position);
-                ticking = false;
-              });
-            }
-        
-            ticking = true;
-          });
-        })();
-            </script>
-        
-        <div style="display: flex;height: 37rem;background: #f2f2f2;">
+            </div>
+        </div>
+        <div style="display: flex;height: 37rem;background: #fff;">
             <div style="flex:1">
                 <iframe src="akhila.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
@@ -550,30 +447,30 @@ content: "\e01d";
                 <iframe src="eeshan.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
             <div style="flex: 1;">
-              <iframe src="eeshan.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+              <iframe src="vartika.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
           </div>
         </div>
-        <div style="display: flex;height: 37rem;background: #f2f2f2;">
+        <div style="display: flex;height: 37rem;background: #fff;">
             <div style="flex:1">
-                <iframe src="vartika.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
-            </div>
-            <div style="flex: 1;">
                 <iframe src="dheeraj.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
             <div style="flex: 1;">
-              <iframe src="dheeraj.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+               
+            </div>
+            <div style="flex: 1;">
+              
           </div>
         </div>
 
-        <div style="display: flex;height: 37rem;background: #f2f2f2;margin-bottom: 15rem;">
+        <div style="display: flex;height: 37rem;background: #fff;margin-bottom: 15rem;">
             <div style="flex:1">
-                <iframe src="vartika.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+                <iframe src="akash.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
             <div style="flex: 1;">
-                <iframe src="dheeraj.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+                <iframe src="saketh.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
             <div style="flex: 1;">
-              <iframe src="dheeraj.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+                
           </div>
         </div>
        
@@ -581,6 +478,7 @@ content: "\e01d";
     
  
 </section>
+
   <script src="../../assets/web/assets/jquery/jquery.min.js"></script>
   <script src="../../assets/popper/popper.min.js"></script>
   <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
