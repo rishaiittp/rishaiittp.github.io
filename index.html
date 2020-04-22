@@ -285,13 +285,22 @@
       .icon-eyeglass:before {
 content: "\e01d";
 }
+@font-face {
+    font-family: garamond;
+    src: url('garamond/Garamond Medium Italic.ttf');
+  }
+  #title:hover{
+    border: none;
+    border-radius: 0;
+  }
   </style>
+  
 </head>
 <body>
     
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
    
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #F2F2F2;">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #A9ABC5;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #252525;">
             <div class="hamburger">
                 <span></span>
@@ -307,17 +316,23 @@ content: "\e01d";
                          <img src="favicon.png" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html" style="border: none;">
-                        RISHA</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" style="font-family: garamond;font-style: italic;" href="index.html" style="border: none;" id="title">
+                    Research In Intelligent Software & Human Analytics (RISHA) Lab</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="#">Home</a>
+                </li>
+                
+                <li class="nav-item">
                     <a class="nav-link link text-white display-4" href="projects/index.html">Projects</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="version2/index.html">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="version2/papers/index.html">Papers
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="lab/index.html">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="lab/papers/index.html">Papers
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="version2/team/about.html">Team</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="lab/team/about.html">Team</a></li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Blog</a></li>
                     
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Teaching
@@ -344,7 +359,7 @@ content: "\e01d";
             </a>
     
     
-            <a href="joinRisha.html" class="sh-side-options-item sh-accent-color">
+            <a href="JoinRishaLab.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -353,7 +368,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="index2.html" class="sh-side-options-item sh-accent-color">
+            <a href="core_principles.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-users-cog"></i>
                 </div>
@@ -371,7 +386,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="hangouts2.html" class="sh-side-options-item sh-accent-color">
+            <a href="hangouts.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-photo-video"></i>
                 </div>
@@ -383,68 +398,39 @@ content: "\e01d";
     
     
     </div>
-    <div style="display: flex;height: 40rem;">
-        <div class="container align-center"  style="flex: 7;height: 100%;" id="ready1">
-            <p style="font-family: 'Nunito',sans-serif;font-style: italic;">I am a passionate researcher and teacher in the area of software engineering with deep interest in educational technologies with an aim to deliver top quality research and teaching from India. On a personal note, I believe that creating a happy ecosystem of people and communities will take us there!</p>
-            <h2 class="pb-3  mbr-section-title display-2" style="display: inline-block;font-size: 2rem;font-family: 'Nunito',sans-serif;">
-                Sridhar Chimalakonda, Ph.D.</h2>
-            <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5" style="display: inline-block;">
-                Assistant professor .....<br>Indian Institute of Technology Tirupati.....<br><br></h3>
-            <div class="row media-row">
-                
-            <div class="team-item col-lg-3 col-md-6">
-                    <div class="item-image">
-                        <img src="assets/images/sridhar.jpg"  title="">
-                    </div>
-                    <div class="item-caption py-3">
-                        <div class="item-name px-2">
-                            <p class="mbr-fonts-style display-5">
-                            Sridhar</p>
-                        </div>
-                        <div class="item-role px-2">
-                            <p>Professor</p>
-                        </div>
-                        <div class="item-social pt-2">
-                            <a href="https://twitter.com/" target="_blank">
-                                <span class="p-1 socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <span class="p-1 socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                            <a href="https://plus.google.com/" target="_blank">
-                                <span class="p-1 socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/" target="_blank">
-                                <span class="p-1 socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                            <a href="https://www.instagram.com/" target="_blank">
-                                <span class="p-1 socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                            <a href="https://www.youtube.com/" target="_blank">    
-                                <span class="p-1 socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div></div>    
+    <div style="display: flex;height: 6rem;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Nunito',sans-serif;font-style: italic;text-align: center;">I am a passionate researcher and teacher in the area of software engineering with deep interest in educational technologies with an aim to deliver top quality research and teaching from India. On a personal note, I believe that creating a happy ecosystem of people and communities will take us there!</p>
         </div>
-         <div style="flex: 6;">
-            <h2 style="color:#53588b;text-align:center;margin-top:1rem;font-family:\'Nunito\',sans-serif;">News</h2></iframe><iframe src="version2/news2.html" frameborder="0" style="width: 100%;height: 35rem;"></iframe>
+        <div style="flex: 1;">
+            <h2 style="color:#53588b;text-align:center;margin-top:1rem;font-family:'Nunito',sans-serif;">News</h2>
         </div>
     </div>
-    <h1 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Research Areas</h1>
-    <iframe src="areas.html" frameborder="0" style="width: 100%;height: 32rem;"></iframe>
-</section>
-<section class="mbr-section article content9 cid-rNnYHEcYW4" id="content9-6">
-    <div class="container">
-        <div class="inner-container" style="width: 100%;">
-            <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-fonts-style display-5">
-                    Want to work with me? Read about my <a href="version2/index.html">Lab</a></div>
-            <hr class="line" style="width: 25%;">
+    <div style="display: flex;height: 29rem;">
+        <div class="container align-center"  style="flex: 7;height: 100%;" id="ready1">
+            <!-- <h2 class="pb-3  mbr-section-title display-2" style="display: inline-block;font-size: 2rem;font-family: 'Nunito',sans-serif;">
+                Sridhar Chimalakonda, Ph.D.</h2> -->
+            <div class="row media-row" style="height: 26rem;">
+                
+            <div style="width: 100%;">
+                    <iframe src="profile.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+            </div>
+            </div>    
         </div>
+         <div style="flex: 6;">
+            <iframe src="lab/news.html" frameborder="0" style="width: 100%;height: 35rem;"></iframe>
         </div>
+    </div>
+    <div style="display: flex;margin-right: 1rem;margin-top: 3rem;">
+        <div style="flex: 1;">
+            <h2 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Core Principles and Guidelines</h2>
+        </div>
+        <div style="flex: 1;">
+            <h2 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Research Areas</h2>
+            <iframe src="areas.html" frameborder="0" style="width: 100%;height: 32rem;"></iframe>
+        </div>
+    </div>
 </section>
-
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

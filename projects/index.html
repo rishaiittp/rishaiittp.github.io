@@ -9,6 +9,8 @@
   <meta name="description" content="">
   
   <title>Projects | RISHA LAB IITTP</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -51,7 +53,7 @@
         border-radius: 5px 0 0 5px;
       }
       #sideNav a:hover{
-        color: #456FFF;
+        color: #f2f2f2;
         right: 0;
       }
       #guidelines{
@@ -285,13 +287,22 @@
       .icon-eyeglass:before {
 content: "\e01d";
 }
+
+@font-face {
+    font-family: garamond;
+    src: url('garamond/Garamond Medium Italic.ttf');
+  }
+  #title:hover{
+    border: none;
+    border-radius: 0;
+  }
       </style>
 </head>
 <body>
     
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
    
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #F2F2F2;">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #A9ABC5;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #252525;">
             <div class="hamburger">
                 <span></span>
@@ -307,22 +318,29 @@ content: "\e01d";
                          <img src="../favicon.png" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="../index.html" style="border: none;">
-                        RISHA</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" style="font-family: garamond;font-style: italic;" href="../index.html" style="border: none;" id="title">
+                    Research In Intelligent Software & Human Analytics (RISHA) Lab</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="#active_hash">Projects</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="../version2/index.html">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="../version2/papers/index.html">Papers
-                    </a></li>
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="../index.html">Home</a>
                 </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="../version2/team/about.html">Team</a></li>
+                
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="#">Projects</a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="../lab/index.html">Lab</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="../lab/papers/index.html">Papers
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="../lab/team/about.html">Team</a></li>
                 <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Blog</a></li>
                     
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Teaching
-                </a></li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Bio</a></li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Teaching
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://google.com">Bio</a></li>
             
                 </ul>
             
@@ -344,7 +362,7 @@ content: "\e01d";
             </a>
     
     
-            <a href="../joinRisha.html" class="sh-side-options-item sh-accent-color">
+            <a href="../JoinRishaToday.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -353,7 +371,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="../index2.html" class="sh-side-options-item sh-accent-color">
+            <a href="../core_principles.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-users-cog"></i>
                 </div>
@@ -371,7 +389,7 @@ content: "\e01d";
                 </div>
             </a>
     
-            <a href="../hangouts2.html" class="sh-side-options-item sh-accent-color">
+            <a href="../hangouts.html" class="sh-side-options-item sh-accent-color">
                 <div class="sh-side-options-item-container">
                     <i class="fas fa-photo-video"></i>
                 </div>
@@ -386,23 +404,9 @@ content: "\e01d";
  
 </section>
 
-<section class="header3 cid-rNo1LP0W2w" id="header3-a">
-
-    
-
-    
-
-    <div class="container"  id="active_hash">
-        <div class="media-container-row">
-            <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2">
-                    Active Projects</h1>                
-            </div>
-        </div>
-    </div>
-
-</section>
-
+    <h1 class="mbr-white pb-3 mbr-fonts-style display-2" style="margin-top: 0;height: 6rem;;background-color: #343A40;font-size: 2rem;padding-top: 2rem;padding-bottom: 2rem;padding-left: 8rem;margin-left: 2rem;margin-right: 2rem;border-radius: 1rem;">
+        Active Projects
+    </h1>                
 <section class="header3 cid-rNo2Gq3nbv" id="header3-b">
     <div class="container">
         <div class="media-container-row">
@@ -411,15 +415,15 @@ content: "\e01d";
             </div>
 
             <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 420;">
+                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 600;font-family: 'Nunito',sans-serif;">
                     Programming Language Learning&nbsp;</h1>
                 
                 <div class="mbr-section-text mbr-white pb-3 ">
-                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1.2rem;">
+                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1rem;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                         Robust understanding of a programming language is a key foundation for being able to create software. My lab investigates what it means to know a programming language, invents and evaluates educational technologies that streamline learning of a programming language, and invents and evaluates assessments that help identify what learners do and do not know about a programming language.
                     </p>
                 </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com">LEARN MORE</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com"style="font-family: 'Nunito',sans-serif;font-weight: 700;">LEARN MORE</a></div>
             </div>
         </div>
     </div>
@@ -433,15 +437,15 @@ content: "\e01d";
             </div>
 
             <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 420;">
+                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 600;font-family: 'Nunito',sans-serif;">
                     Programming Language Learning&nbsp;</h1>
                 
                 <div class="mbr-section-text mbr-white pb-3 ">
-                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1.2rem;">
+                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1rem;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                         Robust understanding of a programming language is a key foundation for being able to create software. My lab investigates what it means to know a programming language, invents and evaluates educational technologies that streamline learning of a programming language, and invents and evaluates assessments that help identify what learners do and do not know about a programming language.
                     </p>
                 </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com">LEARN MORE</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com"style="font-family: 'Nunito',sans-serif;font-weight: 700;">LEARN MORE</a></div>
             </div>
         </div>
     </div>
@@ -455,22 +459,19 @@ content: "\e01d";
             </div>
 
             <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 420;">
+                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 600;font-family: 'Nunito',sans-serif;">
                     Programming Language Learning&nbsp;</h1>
                 
                 <div class="mbr-section-text mbr-white pb-3 ">
-                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1.2rem;">
+                    <p class="mbr-text mbr-fonts-style display-5" style="font-size: 1rem;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                         Robust understanding of a programming language is a key foundation for being able to create software. My lab investigates what it means to know a programming language, invents and evaluates educational technologies that streamline learning of a programming language, and invents and evaluates assessments that help identify what learners do and do not know about a programming language.
                     </p>
                 </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com">LEARN MORE</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com" style="font-family: 'Nunito',sans-serif;font-weight: 700;"> LEARN MORE</a></div>
             </div>
         </div>
     </div>
 
-</section>
-
-<section class="header3 cid-rNo1LP0W2w" id="header3-a" style="background: #eeeeee;">
 </section>
 
   <script src="../assets/web/assets/jquery/jquery.min.js"></script>
