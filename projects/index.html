@@ -297,6 +297,36 @@ content: "\e01d";
     border-radius: 0;
   }
       </style>
+      <script>
+          setTimeout(() => {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) 
+			{
+              var result = []
+              result = JSON.parse(this.responseText).message;
+              console.log(result);
+              for(var i = 0; i<result.length;i++)
+              {
+                  var doop = result[i];
+                document.getElementById('proj').innerHTML += '<div class="media-container-row" style="margin-top: 1.5rem;"><div class="mbr-figure" style="width: 35%;">'
+              + '<img src="' + doop[2] + '" title="">'
+             + '</div><div class="media-content"><h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2" style="font-size: 2rem;font-weight: 600;font-family: \'Nunito\',sans-serif;">'
+              +      doop[0] + '</h1>' + 
+              '<div class="mbr-section-text mbr-white pb-3 ">' + 
+              '<p class="mbr-text mbr-fonts-style display-5" style="font-size: 1rem;font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif;"> ' +
+              doop[1]
+              + '</p></div><div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" '+
+              'href="' + doop[3] + '"style="font-family: \'Nunito\',sans-serif;font-weight: 700;">LEARN MORE</a></div>'+
+              '</div></div>';
+              }
+            }
+          };
+          xhttp.open("POST", "https://pacific-brook-70139.herokuapp.com/project_fetch_xml", false);
+		  xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
+          xhttp.send('link='+"");
+          }, 100);
+      </script>
 </head>
 <body>
     
@@ -410,8 +440,8 @@ content: "\e01d";
         Active Projects
     </h1>                
 <section class="header3 cid-rNo2Gq3nbv" id="header3-b"style="padding-top:0;">
-    <div class="container">
-        <div class="media-container-row" style="margin-top: 1.5rem;">
+    <div class="container" id="proj">
+        <!-- <div class="media-container-row" style="margin-top: 1.5rem;">
             <div class="mbr-figure" style="width: 35%;">
                 <img src="../assets/images/logo-474x332.png" title="">
             </div>
@@ -461,7 +491,7 @@ content: "\e01d";
                 </div>
                 <div class="mbr-section-btn"><a class="btn btn-md btn-primary-outline display-4" href="https://google.com" style="font-family: 'Nunito',sans-serif;font-weight: 700;"> LEARN MORE</a></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </section>
