@@ -1,541 +1,482 @@
 <html lang="en"><head>
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-    <title>Hangouts | RISHA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-    <style>
-    @font-face {
-      src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/polar.otf");
-      font-family: 'Polar';
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <title>CodePen - Slice Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700|Space+Mono">
+  <style>
+  body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+  
+  .slides-nav {
+    z-index: 99;
+    position: fixed;
+    right: -5%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    height: 100%;
+    color: #111;
+  }
+  @media (min-width: 54em) {
+    .slides-nav {
+      right: 2%;
     }
-    
-    *, *:before, *:after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    html, body {
-      font-size: 62.5%;
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    body {
-      background: #000;
-    }
-    
-    svg {
-      display: block;
-      overflow: visible;
-    }
-    
-    .slider-container {
-      position: relative;
-      height: 100%;
-      -webkit-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
-      cursor: all-scroll;
-    }
-    
-    .slider-control {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      width: 12%;
-      height: 100%;
-      -webkit-transition: opacity 0.3s;
-      transition: opacity 0.3s;
-      will-change: opacity;
-      opacity: 0;
-    }
-    .slider-control.inactive:hover {
-      cursor: auto;
-    }
-    .slider-control:not(.inactive):hover {
-      opacity: 1;
-      cursor: pointer;
-    }
-    .slider-control.left {
-      left: 0;
-      background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.18)), to(rgba(0, 0, 0, 0)));
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
-    }
-    .slider-control.right {
-      right: 0;
-      background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.18)));
-      background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 100%);
-    }
-    
-    .slider-pagi {
-      position: absolute;
-      z-index: 3;
-      left: 50%;
-      bottom: 2rem;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      font-size: 0;
-      list-style-type: none;
-    }
-    .slider-pagi__elem {
-      position: relative;
-      display: inline-block;
-      vertical-align: top;
-      width: 2rem;
-      height: 2rem;
-      margin: 0 0.5rem;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      cursor: pointer;
-    }
-    .slider-pagi__elem:before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 1.2rem;
-      height: 1.2rem;
-      background: #fff;
-      border-radius: 50%;
-      -webkit-transition: -webkit-transform 0.3s;
-      transition: -webkit-transform 0.3s;
-      transition: transform 0.3s;
-      transition: transform 0.3s, -webkit-transform 0.3s;
-      -webkit-transform: translate(-50%, -50%) scale(0);
-              transform: translate(-50%, -50%) scale(0);
-    }
-    .slider-pagi__elem.active:before, .slider-pagi__elem:hover:before {
-      -webkit-transform: translate(-50%, -50%) scale(1);
-              transform: translate(-50%, -50%) scale(1);
-    }
-    
-    .slider {
-      z-index: 1;
-      position: relative;
-      height: 100%;
-    }
-    .slider.animating {
-      -webkit-transition: -webkit-transform 0.5s;
-      transition: -webkit-transform 0.5s;
-      transition: transform 0.5s;
-      transition: transform 0.5s, -webkit-transform 0.5s;
-      will-change: transform;
-    }
-    .slider.animating .slide__bg {
-      -webkit-transition: -webkit-transform 0.5s;
-      transition: -webkit-transform 0.5s;
-      transition: transform 0.5s;
-      transition: transform 0.5s, -webkit-transform 0.5s;
-      will-change: transform;
-    }
-    
-    .slide {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    .slide.active .slide__overlay,
-    .slide.active .slide__text {
-      opacity: 1;
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    .slide__bg {
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      will-change: transform;
-    }
-    .slide:nth-child(1) {
-      left: 0;
-    }
-    .slide:nth-child(1) .slide__bg {
-      left: 0;
-      background-image: url("assets/images/h5.jpg");
-    }
-    .slide:nth-child(1) .slide__overlay-path {
-      fill: #e99c7e;
-    }
-    @media (max-width: 991px) {
-      .slide:nth-child(1) .slide__text {
-        background-color: rgba(233, 156, 126, 0.8);
-      }
-    }
-    .slide:nth-child(2) {
-      left: 100%;
-    }
-    .slide:nth-child(2) .slide__bg {
-      left: -50%;
-      background-image: url("lab/images/meet1.jpg");
-    }
-    .slide:nth-child(2) .slide__overlay-path {
-      fill: #e1ccae;
-    }
-    @media (max-width: 991px) {
-      .slide:nth-child(2) .slide__text {
-        background-color: rgba(225, 204, 174, 0.8);
-      }
-    }
-    .slide:nth-child(3) {
-      left: 200%;
-    }
-    .slide:nth-child(3) .slide__bg {
-      left: -100%;
-      background-image: url("assets/images/h4.jpg");
-    }
-    .slide:nth-child(3) .slide__overlay-path {
-      fill: #adc5cd;
-    }
-    @media (max-width: 991px) {
-      .slide:nth-child(3) .slide__text {
-        background-color: rgba(173, 197, 205, 0.8);
-      }
-    }
-    .slide:nth-child(4) {
-      left: 300%;
-    }
-    .slide:nth-child(4) .slide__bg {
-      left: -150%;
-      background-image: url("assets/images/h6.jpg");
-    }
-    .slide:nth-child(4) .slide__overlay-path {
-      fill: #cbc6c3;
-    }
-    @media (max-width: 991px) {
-      .slide:nth-child(4) .slide__text {
-        background-color: rgba(203, 198, 195, 0.8);
-      }
-    }
+  }
+  .slides-nav__nav {
+    position: relative;
+    right: 0;
+    display: block;
+    font-size: 1em;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  .slides-nav button {
+    position: relative;
+    display: inline-block;
+    padding: 0.35em;
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: transparent;
+    border: 0;
+    overflow-x: hidden;
+    -webkit-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+  }
+  .slides-nav button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: #111;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+  }
+  .slides-nav button:hover {
+    cursor: pointer;
+    color: rgba(17, 17, 17, 0.75);
+    -webkit-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+  }
+  .slides-nav button:hover:after {
+    width: 100%;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+  }
+  .slides-nav button:focus {
+    outline: 0;
+  }
+  .is-sliding .slides-nav {
+    pointer-events: none;
+  }
+  
+  .slides {
+    position: relative;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    -webkit-transition: background 1s cubic-bezier(0.99, 1, 0.92, 1);
+    transition: background 1s cubic-bezier(0.99, 1, 0.92, 1);
+  }
+  .is-sliding .slides {
+    background: #ededed;
+    -webkit-transition: background 0.3s cubic-bezier(0.99, 1, 0.92, 1);
+    transition: background 0.3s cubic-bezier(0.99, 1, 0.92, 1);
+  }
+  
+  .slide {
+    z-index: -1;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    -webkit-transition: z-index 1s ease;
+    transition: z-index 1s ease;
+  }
+  .slide.is-active {
+    z-index: 19;
+    -webkit-transition: z-index 1s ease;
+    transition: z-index 1s ease;
+  }
+  .slide__content {
+    position: relative;
+    margin: 0 auto;
+    height: 95%;
+    width: 95%;
+    top: 2.5%;
+  }
+  @media (min-width: 54em) {
     .slide__content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      height: 80%;
+      width: 80%;
+      top: 10%;
     }
-    .slide__overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      min-height: 810px;
-      -webkit-transition: opacity 0.2s 0.5s, -webkit-transform 0.5s 0.5s;
-      transition: opacity 0.2s 0.5s, -webkit-transform 0.5s 0.5s;
-      transition: transform 0.5s 0.5s, opacity 0.2s 0.5s;
-      transition: transform 0.5s 0.5s, opacity 0.2s 0.5s, -webkit-transform 0.5s 0.5s;
-      will-change: transform, opacity;
-      -webkit-transform: translate3d(-20%, 0, 0);
-              transform: translate3d(-20%, 0, 0);
-      opacity: 0;
+  }
+  .slide__header {
+    z-index: 9;
+    position: relative;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    overflow-y: hidden;
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
+  }
+  @media (min-width: 54em) {
+    .slide__header {
+      -webkit-transform: translateX(-5%);
+              transform: translateX(-5%);
     }
-    @media (max-width: 991px) {
-      .slide__overlay {
-        display: none;
-      }
+  }
+  .slide__title {
+    font-family: Montserrat, helvetica;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #111;
+    overflow-y: hidden;
+  }
+  @media (min-width: 54em) {
+    .slide__title {
+      font-size: 1.5em;
     }
-    .slide__overlay path {
-      opacity: 0.8;
+  }
+  .slide__title .title-line {
+    display: block;
+    overflow-y: hidden;
+  }
+  .slide__title .title-line span {
+    display: inline-block;
+    -webkit-transform: translate3d(0, 140%, 0);
+            transform: translate3d(0, 140%, 0);
+    opacity: 0;
+    -webkit-transition: opacity 0.8s ease, -webkit-transform 0.4s ease;
+    transition: opacity 0.8s ease, -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.8s ease;
+    transition: transform 0.4s ease, opacity 0.8s ease, -webkit-transform 0.4s ease;
+  }
+  .slide__title .title-line span:nth-child(1) {
+    -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+  }
+  .slide__title .title-line span:nth-child(2) {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+  }
+  .is-active .slide__title .title-line span {
+    -webkit-transform: translate3d(0, 0%, 0);
+            transform: translate3d(0, 0%, 0);
+    opacity: 1;
+    -webkit-transition: opacity 0.1s ease, -webkit-transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: opacity 0.1s ease, -webkit-transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.1s ease;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.1s ease, -webkit-transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .is-active .slide__title .title-line:nth-of-type(2n) span {
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+  .slide__figure {
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .is-sliding .slide__figure {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .slide__img {
+    position: relative;
+    display: block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%;
+    -webkit-backface-visibility: hidden;
+    height: 0%;
+    width: 100%;
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+    -webkit-transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.4s 0.1s ease;
+    transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-filter 0.4s 0.1s ease;
+    transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s 0.1s ease;
+    transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s 0.1s ease, -webkit-filter 0.4s 0.1s ease;
+  }
+  .is-active .slide__img {
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), -webkit-filter 0.4s 0.1s ease;
+    transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), -webkit-filter 0.4s 0.1s ease;
+    transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), filter 0.4s 0.1s ease;
+    transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), filter 0.4s 0.1s ease, -webkit-filter 0.4s 0.1s ease;
+  }
+  .is-sliding .slide__img {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
     }
-    .slide__text {
-      position: absolute;
-      width: 25%;
-      bottom: 15%;
-      left: 12%;
-      color: #fff;
-      -webkit-transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
-      transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
-      transition: transform 0.5s 0.8s, opacity 0.5s 0.8s;
-      transition: transform 0.5s 0.8s, opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
-      will-change: transform, opacity;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      opacity: 0;
-    }
-    @media (max-width: 991px) {
-      .slide__text {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 20rem;
-        text-align: center;
-        -webkit-transform: translateY(50%);
-                transform: translateY(50%);
-        -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
-        transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
-        transition: transform 0.5s 0.5s, opacity 0.5s 0.5s;
-        transition: transform 0.5s 0.5s, opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
-        padding: 0 1rem;
-      }
-    }
-    .slide__text-heading {
-      font-family: 'Nunito', sans-serif;
-      font-size: 5rem;
-      margin-bottom: 2rem;
-    }
-    @media (max-width: 991px) {
-      .slide__text-heading {
-        line-height: 20rem;
-        font-size: 3.5rem;
-      }
-    }
-    .slide__text-desc {
-      font-family: "Open Sans", Helvetica, Arial, sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-    @media (max-width: 991px) {
-      .slide__text-desc {
-        display: none;
-      }
-    }
-    .slide__text-link {
-      z-index: 5;
-      display: inline-block;
-      position: relative;
-      padding: 0.5rem;
-      cursor: pointer;
-      font-family: "Open Sans", Helvetica, Arial, sans-serif;
-      font-size: 2.3rem;
-      -webkit-perspective: 1000px;
-              perspective: 1000px;
-    }
-    @media (max-width: 991px) {
-      .slide__text-link {
-        display: none;
-      }
-    }
-    .slide__text-link:before {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      -webkit-transform-origin: 50% 100%;
-              transform-origin: 50% 100%;
-      -webkit-transform: rotateX(-85deg);
-              transform: rotateX(-85deg);
-      -webkit-transition: -webkit-transform 0.3s;
-      transition: -webkit-transform 0.3s;
-      transition: transform 0.3s;
-      transition: transform 0.3s, -webkit-transform 0.3s;
-      will-change: transform;
-    }
-    .slide__text-link:hover:before {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-    }
-    </style>
-    <script>
-      window.console = window.console || function(t) {};
-    </script>
-    <script>
-      if (document.location.search.match(/type=embed/gi)) {
-        window.parent.postMessage("resize", "*");
-      }
-    </script>
-    </head>
-    <body translate="no">
-    <div class="slider-container">
-    <div class="slider-control left"></div>
-    <div class="slider-control right"></div>
-    <ul class="slider-pagi" style="display: none;"><li class="slider-pagi__elem slider-pagi__elem-0"></li><li class="slider-pagi__elem slider-pagi__elem-1"></li><li class="slider-pagi__elem slider-pagi__elem-2 active"></li><li class="slider-pagi__elem slider-pagi__elem-3"></li></ul>
-    <div class="slider" style="transform: translate3d(-200%, 0px, 0px);">
-    <div class="slide slide-0">
-    <div class="slide__bg" style="transform: translate3d(100%, 0px, 0px);"></div>
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  </head>
+  <body translate="no" class="">
+  <main>
+  <section class="slides">
+  <section class="slides-nav">
+  <nav class="slides-nav__nav">
+  <button class="slides-nav__prev js-prev">Prev</button>
+  <button class="slides-nav__next js-next">Next</button>
+  </nav>
+  </section>
+  <section class="slide is-active">
+  <div class="slide__content">
+  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/nfTA8pdaq9A/2000x1100)"></div></figure>
+  <header class="slide__header">
+  <h2 class="slide__title" style="font-family: 'Nunito',sans-serif;">
+  <span class="title-line" style="margin: 0 auto;"><span>ICALT 2019</span></span>
+  <span class="title-line"><span>Or Scroll Fool</span></span>
+  </h2>
+  </header>
+  </div>
+  </section>
+  <section class="slide is-next">
+  <div class="slide__content">
+  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/okmtVMuBzkQ/2000x1100)"></div></figure>
+  <header class="slide__header">
+  <h2 class="slide__title">
+  <span class="title-line"><span>Slide Two</span></span>
+  <span class="title-line"><span>Dood Mood</span></span>
+  </h2>
+  </header>
+  </div>
+  </section>
+  <section class="slide">
+  <div class="slide__content">
+  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/WuQME0I_oZA/2000x1100)"></div></figure>
+  <header class="slide__header">
+  <h2 class="slide__title">
+  <span class="title-line"><span>This Right</span></span>
+  <span class="title-line"><span>Here Makes Three</span></span>
+  </h2>
+  </header>
+  </div>
+  </section>
+  <section class="slide">
+  <div class="slide__content">
+  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/NsWcRlBT_74/2000x1100)"></div></figure>
+  <header class="slide__header">
+  <h2 class="slide__title">
+  <span class="title-line"><span>How Now</span></span>
+  <span class="title-line"><span>Part Four More</span></span>
+  </h2>
+  </header>
+  </div>
+  </section>
+  <section class="slide">
     <div class="slide__content">
-    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405"></path>
-    </svg>
-    <div class="slide__text">
-    <h2 class="slide__text-heading" style="font-size: 3rem;">ISEC 2020</h2>
-    <p class="slide__text-desc">27-29 FEB 2020 @ JABALPUR, INDIA</p>
-    <a class="slide__text-link">Link to Gallery</a>
+    <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/WuQME0I_oZA/2000x1100)"></div></figure>
+    <header class="slide__header">
+    <h2 class="slide__title">
+    <span class="title-line"><span>This Right</span></span>
+    <span class="title-line"><span>Here Makes Three</span></span>
+    </h2>
+    </header>
     </div>
-    </div>
-    </div>
-    <div class="slide slide-1">
-    <div class="slide__bg" style="transform: translate3d(100%, 0px, 0px);"></div>
+    </section>
+    <section class="slide">
     <div class="slide__content">
-    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405"></path>
-    </svg>
-    <div class="slide__text">
-    <h4 class="slide__text-heading" style="font-size: 3rem;">TEAM DINNER</h4>
-    <p class="slide__text-desc">03 DEC 2019 @ MINERVA GRAND, TIRUPATI</p>
-    <a class="slide__text-link">Link to Gallery</a>
+    <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/NsWcRlBT_74/2000x1100)"></div></figure>
+    <header class="slide__header">
+    <h2 class="slide__title">
+    <span class="title-line"><span>How Now</span></span>
+    <span class="title-line"><span>Part Four More</span></span>
+    </h2>
+    </header>
     </div>
-    </div>
-    </div>
-    <div class="slide slide-2 active">
-    <div class="slide__bg" style="transform: translate3d(100%, 0px, 0px);"></div>
-    <div class="slide__content">
-    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405"></path>
-    </svg>
-    <div class="slide__text">
-      <h2 class="slide__text-heading" style="font-size: 3rem;">ICALT 2019</h2>
-      <p class="slide__text-desc">15-18 JULY 2019 @ BRAZIL, SA</p>
-      <a class="slide__text-link">Link to Gallery</a>
-    </div>
-    </div>
-    </div>
-    <div class="slide slide-3">
-    <div class="slide__bg" style="transform: translate3d(100%, 0px, 0px);"></div>
-    <div class="slide__content">
-    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405"></path>
-    </svg>
-    <div class="slide__text">
-    <h2 class="slide__text-heading" style="font-size: 3rem;">ISEC 2020</h2>
-    <p class="slide__text-desc">27-29 FEB 2020 @ JABALPUR, INDIA</p>
-    <a class="slide__text-link">Link to Gallery</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script id="rendered-js">
-    $(document).ready(function () {
-    
-      var $slider = $(".slider"),
-      $slideBGs = $(".slide__bg"),
-      diff = 0,
-      curSlide = 0,
-      numOfSlides = $(".slide").length - 1,
-      animating = false,
-      animTime = 500,
-      autoSlideTimeout,
-      autoSlideDelay = 6000,
-      $pagination = $(".slider-pagi");
-    
-      function createBullets() {
-        for (var i = 0; i < numOfSlides + 1; i++) {if (window.CP.shouldStopExecution(0)) break;
-          var $li = $("<li class='slider-pagi__elem'></li>");
-          $li.addClass("slider-pagi__elem-" + i).data("page", i);
-          if (!i) $li.addClass("active");
-          $pagination.append($li);
-        }window.CP.exitedLoop(0);
-      };
-    
-      createBullets();
-    
-      function manageControls() {
-        $(".slider-control").removeClass("inactive");
-        if (!curSlide) $(".slider-control.left").addClass("inactive");
-        if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
-      };
-    
-      function autoSlide() {
-        autoSlideTimeout = setTimeout(function () {
-          curSlide++;
-          if (curSlide > numOfSlides) curSlide = 0;
-          changeSlides();
-        }, autoSlideDelay);
-      };
-    
-      autoSlide();
-    
-      function changeSlides(instant) {
-        if (!instant) {
-          animating = true;
-          manageControls();
-          $slider.addClass("animating");
-          $slider.css("top");
-          $(".slide").removeClass("active");
-          $(".slide-" + curSlide).addClass("active");
-          setTimeout(function () {
-            $slider.removeClass("animating");
-            animating = false;
-          }, animTime);
-        }
-        window.clearTimeout(autoSlideTimeout);
-        $(".slider-pagi__elem").removeClass("active");
-        $(".slider-pagi__elem-" + curSlide).addClass("active");
-        $slider.css("transform", "translate3d(" + -curSlide * 100 + "%,0,0)");
-        $slideBGs.css("transform", "translate3d(" + curSlide * 50 + "%,0,0)");
-        diff = 0;
-        autoSlide();
-      }
-    
-      function navigateLeft() {
-        if (animating) return;
-        if (curSlide > 0) curSlide--;
-        changeSlides();
-      }
-    
-      function navigateRight() {
-        if (animating) return;
-        if (curSlide < numOfSlides) curSlide++;
-        changeSlides();
-      }
-    
-      $(document).on("mousedown touchstart", ".slider", function (e) {
-        if (animating) return;
-        window.clearTimeout(autoSlideTimeout);
-        var startX = e.pageX || e.originalEvent.touches[0].pageX,
-        winW = $(window).width();
-        diff = 0;
-    
-        $(document).on("mousemove touchmove", function (e) {
-          var x = e.pageX || e.originalEvent.touches[0].pageX;
-          diff = (startX - x) / winW * 70;
-          if (!curSlide && diff < 0 || curSlide === numOfSlides && diff > 0) diff /= 2;
-          $slider.css("transform", "translate3d(" + (-curSlide * 100 - diff) + "%,0,0)");
-          $slideBGs.css("transform", "translate3d(" + (curSlide * 50 + diff / 2) + "%,0,0)");
+    </section>
+  
+  </section>
+  </main>
+  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script id="rendered-js">
+  (function ($) {
+  
+    var SliceSlider = {
+  
+      /**
+                         * Settings Object
+                         */
+      settings: {
+        delta: 0,
+        currentSlideIndex: 0,
+        scrollThreshold: 40,
+        slides: $('.slide'),
+        numSlides: $('.slide').length,
+        navPrev: $('.js-prev'),
+        navNext: $('.js-next') },
+  
+  
+      /**
+                                   * Init
+                                   */
+      init: function () {
+        s = this.settings;
+        this.bindEvents();
+      },
+  
+      /**
+          * Bind our click, scroll, key events
+          */
+      bindEvents: function () {
+  
+        // Scrollwheel & trackpad
+        s.slides.on({
+          'DOMMouseScroll mousewheel': SliceSlider.handleScroll });
+  
+        // On click prev
+        s.navPrev.on({
+          'click': SliceSlider.prevSlide });
+  
+        // On click next
+        s.navNext.on({
+          'click': SliceSlider.nextSlide });
+  
+        // On Arrow keys
+        $(document).keyup(function (e) {
+          // Left or back arrows
+          if (e.which === 37 || e.which === 38) {
+            SliceSlider.prevSlide();
+          }
+          // Down or right
+          if (e.which === 39 || e.which === 40) {
+            SliceSlider.nextSlide();
+          }
         });
-      });
-    
-      $(document).on("mouseup touchend", function (e) {
-        $(document).off("mousemove touchmove");
-        if (animating) return;
-        if (!diff) {
-          changeSlides(true);
+      },
+  
+      /** 
+          * Interept scroll direction
+          */
+      handleScroll: function (e) {
+  
+        // Scrolling up
+        if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {
+  
+          s.delta--;
+  
+          if (Math.abs(s.delta) >= s.scrollThreshold) {
+            SliceSlider.prevSlide();
+          }
+        }
+  
+        // Scrolling Down
+        else {
+  
+            s.delta++;
+  
+            if (s.delta >= s.scrollThreshold) {
+              SliceSlider.nextSlide();
+            }
+          }
+  
+        // Prevent page from scrolling
+        return false;
+      },
+  
+      /**
+          * Show Slide
+          */
+      showSlide: function () {
+        // reset
+        s.delta = 0;
+        // Bail if we're already sliding
+        if ($('body').hasClass('is-sliding')) {
           return;
         }
-        if (diff > -8 && diff < 8) {
-          changeSlides();
-          return;
+        // Loop through our slides
+        s.slides.each(function (i, slide) {
+  
+          // Toggle the is-active class to show slide
+          $(slide).toggleClass('is-active', i === s.currentSlideIndex);
+          $(slide).toggleClass('is-prev', i === s.currentSlideIndex - 1);
+          $(slide).toggleClass('is-next', i === s.currentSlideIndex + 1);
+  
+          // Add and remove is-sliding class
+          $('body').addClass('is-sliding');
+  
+          setTimeout(function () {
+            $('body').removeClass('is-sliding');
+          }, 1000);
+        });
+      },
+  
+      /**
+          * Previous Slide
+          */
+      prevSlide: function () {
+  
+        // If on first slide, loop to last
+        if (s.currentSlideIndex <= 0) {
+          s.currentSlideIndex = s.numSlides;
         }
-        if (diff <= -8) {
-          navigateLeft();
+        s.currentSlideIndex--;
+  
+        SliceSlider.showSlide();
+      },
+  
+      /**
+          * Next Slide
+          */
+      nextSlide: function () {
+  
+        s.currentSlideIndex++;
+  
+        // If on last slide, loop to first
+        if (s.currentSlideIndex >= s.numSlides) {
+          s.currentSlideIndex = 0;
         }
-        if (diff >= 8) {
-          navigateRight();
-        }
-      });
-    
-      $(document).on("click", ".slider-control", function () {
-        if ($(this).hasClass("left")) {
-          navigateLeft();
-        } else {
-          navigateRight();
-        }
-      });
-    
-      $(document).on("click", ".slider-pagi__elem", function () {
-        curSlide = $(this).data("page");
-        changeSlides();
-      });
-    
-    });
-    //# sourceURL=pen.js
-        </script>
-    
-    
-    </body></html>
+  
+        SliceSlider.showSlide();
+      } };
+  
+    SliceSlider.init();
+  })(jQuery);
+  //# sourceURL=pen.js
+      </script>
+  
+  
+  </body></html>
