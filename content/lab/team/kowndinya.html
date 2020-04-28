@@ -35,20 +35,16 @@
     .wrapper {
       width: 100%;
       width: 100%;
-      height: auto;
-      min-height: 100vh;
-      padding: 50px 20px;
-      padding-top: 100px;
+      height: 55vh;
       display: flex;
       background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
       display: flex;
-      background: #eceeff;
+      background: transparent;
     }
     @media screen and (max-width: 768px) {
       .wrapper {
         height: auto;
         min-height: 100vh;
-        padding-top: 100px;
       }
     }
     
@@ -56,10 +52,14 @@
       width: 100%;
       min-height: 460px;
       margin: auto;
+      margin-top: 5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
       box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
       background: #fff;
       border-radius: 12px;
-      max-width: 700px;
+      max-width: 500px;
       position: relative;
     }
     .profile-card.active .profile-card__cnt {
@@ -76,8 +76,8 @@
       transition-delay: .1s;
     }
     .profile-card__img {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       margin-left: auto;
       margin-right: auto;
       transform: translateY(-50%);
@@ -85,7 +85,7 @@
       overflow: hidden;
       position: relative;
       z-index: 4;
-      box-shadow: 0px 5px 50px 0px #6c44fc, 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
+      box-shadow:  0px 0px 0px 7px #f2f2f2;
     }
     @media screen and (max-width: 576px) {
       .profile-card__img {
@@ -103,8 +103,6 @@
     .profile-card__cnt {
       margin-top: -35px;
       text-align: center;
-      padding: 0 20px;
-      padding-bottom: 40px;
       transition: all .3s;
     }
     .profile-card__name {
@@ -142,7 +140,7 @@
       margin-top: 35px;
     }
     .profile-card-inf__item {
-      padding: 10px 35px;
+      padding: 10px 20px;
       min-width: 150px;
     }
     @media screen and (max-width: 768px) {
@@ -393,14 +391,16 @@
     
     </head>
     <body translate="no">
-    <div class="wrapper">
+    <div class="wrapper" style="padding: 0rem;">
     <div class="profile-card js-profile-card">
     <div class="profile-card__img">
     <img src="img/kowndinya.jpg" alt="profile card">
     </div>
     <div class="profile-card__cnt js-profile-cnt">
-    <div class="profile-card__name">Kowndinya B</div>
-    <div class="profile-card__txt">Research Student <strong>B.Tech</strong></div>
+    <div class="profile-card__name">Kowndinya Boyalakuntla</div>
+    <div class="profile-card__txt">Research Student <strong>B.Tech(UG3)</strong>
+    <br><strong>cs17b032@iittp.ac.in</strong>
+    </div>
     <div class="profile-card-loc">
     <span class="profile-card-loc__icon">
     <svg class="icon"><use xlink:href="#icon-location"></use></svg>
@@ -409,52 +409,46 @@
     IIT TIRUPATI
     </span>
     </div>
-    <div class="profile-card-inf">
-    <div class="profile-card-inf__item">
-    <div class="profile-card-inf__title">0</div>
-    <div class="profile-card-inf__txt">Projects</div>
+    <div style="margin-top: 1rem;">
+      <span style="font-size: 18px;font-weight: bolder;
+      color: #324e63;">2 lines description here<br>2 lines description here</span> 
     </div>
-    <div class="profile-card-inf__item">
-    <div class="profile-card-inf__title">0</div>
-    <div class="profile-card-inf__txt">Research Papers</div>
-    </div>
-    <div class="profile-card-inf__item">
-    <div class="profile-card-inf__title">0</div>
-    <div class="profile-card-inf__txt">Publications</div>
-    </div>
-    </div>
-    <div class="profile-card-social">
-    <a href="#" class="profile-card-social__item facebook" target="_blank">
-    <span class="icon-font">
-        <i class="fa fa-registered" aria-hidden="true"></i>
-    </span>
-    </a>
-    
-    <a href="#" class="profile-card-social__item twitter" target="_blank">
-        <span class="icon-font">
-            <i class="fa fa-dashcube" aria-hidden="true"></i>
-        </span>
-    </a>
-    <a href="#" class="profile-card-social__item facebook" target="_blank">
-        <span class="icon-font">
-            <i class="fa fa-google" aria-hidden="true"></i>
-        </span>
-    </a>
-    <a href="https://github.com/Kowndinya2000/" class="profile-card-social__item github" target="_blank">
-    <span class="icon-font">
-    <svg class="icon"><use xlink:href="#icon-github"></use></svg>
-    </span>
-    </a>
-    </div>
+    <div style="display: flex;margin: 0 30px;margin-top: 2rem;">
+      <div  style="flex: 1;margin-left: 4rem;">
+        <a href="#" class="profile-card-social__item facebook" target="_blank">
+          <span class="icon-font">
+              <i class="fa fa-registered" aria-hidden="true"></i>
+          </span>
+        </a>
+      </div>
+      <div  style="flex: 1;">
+        <a href="#" class="profile-card-social__item twitter" target="_blank">
+          <span class="icon-font">
+              <i class="fa fa-dashcube" aria-hidden="true"></i>
+          </span>
+      </a>  
+      </div>
+      <div  style="flex: 1;">
+        <a href="#" class="profile-card-social__item facebook" target="_blank">
+          <span class="icon-font">
+              <i class="fa fa-google" aria-hidden="true"></i>
+          </span>
+      </a>
+      </div>
+      <div  style="flex: 1;margin-right: 4rem;">
+        <a href="https://github.com/Kowndinya2000" class="profile-card-social__item github" target="_blank">
+          <span class="icon-font">
+          <svg class="icon"><use xlink:href="#icon-github"></use></svg>
+          </span>
+          </a>
+      </div>
+  </div>
+   
     <div style="display: flex;margin: 0 30px;">
-        <div class="profile-card-inf__txt" style="flex: 1;margin-left: 10rem;">Research gate</div>
+        <div class="profile-card-inf__txt" style="flex: 1;margin-left: 4rem;">Research gate</div>
         <div class="profile-card-inf__txt" style="flex: 1;">DBLP</div>
         <div class="profile-card-inf__txt" style="flex: 1;">Google Scholar</div>
-        <div class="profile-card-inf__txt" style="flex: 1;margin-right: 10rem;">Github</div>
-    </div>
-    <div class="profile-card-ctr">
-    <button class="profile-card__button button--blue js-message-btn">Message</button>
-    <button class="profile-card__button button--orange">Follow</button>
+        <div class="profile-card-inf__txt" style="flex: 1;margin-right: 4rem;">Github</div>
     </div>
     </div>
     <div class="profile-card-message js-message">
