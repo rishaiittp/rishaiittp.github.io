@@ -253,9 +253,6 @@
       }
     </script>
      <style>
-
-      img{width:32.2%;}
-      
       #overlay{
           font: 200 16px/1 Helvetica, Arial, sans-serif;
         position:fixed;
@@ -292,7 +289,7 @@
           var ovrl = id("overlay"),
               prog = id("progress"),
               stat = id("progstat"),
-              img = document.images,
+              img = document.getElementsByClassName('ifrms'),
               c = 0;
               tot = img.length;
       
@@ -326,7 +323,7 @@
               <div id="progstat"></div>
               <div id="progress"></div>
             </div>
-    <div class="container">
+    <div class="container ifrms">
     <a class="card1" href="#">
     <h3>FUNDING / COLLABORATORS</h3>
     <p class="small"></p>

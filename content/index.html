@@ -294,10 +294,7 @@ content: "\e01d";
     border-radius: 0;
   }
   </style>
-    <style>
-
-        img{width:32.2%;}
-        
+    <style>        
         #overlay{
             font: 200 16px/1 Helvetica, Arial, sans-serif;
           position:fixed;
@@ -334,7 +331,7 @@ content: "\e01d";
             var ovrl = id("overlay"),
                 prog = id("progress"),
                 stat = id("progstat"),
-                img = document.images,
+                img = document.getElementsByClassName('ifrms'),
                 c = 0;
                 tot = img.length;
         
@@ -440,36 +437,36 @@ content: "\e01d";
             <div class="row media-row" style="height: 26rem;">
                 
             <div style="width: 100%;">
-                    <iframe src="profile" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+                    <iframe class="ifrms" src="profile" frameborder="0" style="width: 100%;height: 100%;"></iframe>
             </div>
             </div>    
         </div>
          <div style="flex: 6;">
-            <iframe src="lab/news" frameborder="0" style="width: 100%;height: 35rem;"></iframe>
+            <iframe class="ifrms" src="lab/news" frameborder="0" style="width: 100%;height: 35rem;"></iframe>
         </div>
     </div>
     <div style="display: flex;margin-top: 10rem;">
         <div style="flex: 1;margin-right: 1rem;">
             <h2 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Core Philosophy</h2>
-            <iframe src="areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
+            <iframe class="ifrms" src="areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
         </div>
         <div style="flex: 1;">
             <h2 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Research Areas</h2>
-            <iframe src="areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
+            <iframe class="ifrms" src="areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
         </div>
     </div>
     <div style="height: 49rem;">
-        <iframe src="service" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+        <iframe class="ifrms" src="service" frameborder="0" style="width: 100%;height: 100%;"></iframe>
     </div>
     <div style="text-align: center;display: flex;height: 6rem;">
         <div style="flex: 1;"></div>
         <div style="flex: 1;">
-            <iframe src="funding_head" frameborder="0" style="height: 100%;width: 100%;"></iframe>
+            <iframe class="ifrms" src="funding_head" frameborder="0" style="height: 100%;width: 100%;"></iframe>
         </div>
         <div style="flex: 1;"></div>
     </div>
     <div style="height: 30rem;">
-        <iframe src="funding" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+        <iframe class="ifrms" src="funding" frameborder="0" style="width: 100%;height: 100%;"></iframe>
     </div>
 </section>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

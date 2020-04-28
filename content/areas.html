@@ -30,8 +30,6 @@
     
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <style>
-
-    img{width:32.2%;}
     
     #overlay{
         font: 200 16px/1 Helvetica, Arial, sans-serif;
@@ -69,7 +67,7 @@
         var ovrl = id("overlay"),
             prog = id("progress"),
             stat = id("progstat"),
-            img = document.images,
+            img = document.getElementsByClassName('ifrms'),
             c = 0;
             tot = img.length;
     
@@ -106,7 +104,7 @@
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-    <div class="col-lg-10 offset-lg-1 pt-5 pb-5 bg-dark text-light" style="height: 25rem;border-radius: 1rem;">
+    <div class="col-lg-10 offset-lg-1 pt-5 pb-5 bg-dark text-light ifrms" style="height: 25rem;border-radius: 1rem;">
     <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
     <div class="carousel-inner" role="listbox">
     <div class="carousel-item text-center p-4 active">

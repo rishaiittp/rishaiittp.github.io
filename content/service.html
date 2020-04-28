@@ -13,9 +13,6 @@
        }
    </style>
   <style>
-
-    img{width:32.2%;}
-    
     #overlay{
         font: 200 16px/1 Helvetica, Arial, sans-serif;
       position:fixed;
@@ -52,7 +49,7 @@
         var ovrl = id("overlay"),
             prog = id("progress"),
             stat = id("progstat"),
-            img = document.images,
+            img = document.getElementsByClassName('ifrms'),
             c = 0;
             tot = img.length;
     
@@ -101,7 +98,7 @@
                 <iframe src="international_heading" frameborder="0" style="height: 100%;width: 100%;"></iframe>
             </div>
         </div> -->
-        <div style="display: flex;height: 4rem;margin-top: 0">
+        <div style="display: flex;height: 4rem;margin-top: 0" class="ifrms">
             <div style="flex: 1;margin-right: 1rem;margin-left: 1rem;">
                 <h2 style="color:#53588b;margin-top: 0;text-align:center;font-family:'Nunito',sans-serif;font-size: 32px;">Distiguished Highlights</h2> 
                 <div style="display:flex">

@@ -295,13 +295,82 @@
 content: "\e01d";
 }
   </style>
-</head>
-<body>
+    <style>        
+        #overlay{
+            font: 200 16px/1 Helvetica, Arial, sans-serif;
+          position:fixed;
+          z-index:99999;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;
+          background:rgba(0,0,0,0.9);
+          transition: 1s 0.4s;
+        }
+        #progress{
+          height:1px;
+          background:#fff;
+          position:absolute;
+          width:0;
+          top:50%;
+        }
+        #progstat{
+          font-size:0.7em;
+          letter-spacing: 3px;
+          position:absolute;
+          top:50%;
+          margin-top:-40px;
+          width:100%;
+          text-align:center;
+          color:#fff;
+        }
+          </style>
+          <script>
+              ;(function(){
+          function id(v){return document.getElementById(v); }
+          function loadbar() {
+            var ovrl = id("overlay"),
+                prog = id("progress"),
+                stat = id("progstat"),
+                img = document.getElementsByClassName('ifrms'),
+                c = 0;
+                tot = img.length;
+        
+            function imgLoaded(){
+              c += 1;
+              var perc = ((100/tot*c) << 0) +"%";
+              prog.style.width = perc;
+              stat.innerHTML = "Loading "+ perc;
+              if(c===tot) return doneLoading();
+            }
+            function doneLoading(){
+              ovrl.style.opacity = 0;
+              setTimeout(function(){ 
+                ovrl.style.display = "none";
+              }, 1200);
+            }
+            for(var i=0; i<tot; i++) {
+              var tImg     = new Image();
+              tImg.onload  = imgLoaded;
+              tImg.onerror = imgLoaded;
+              tImg.src     = img[i].src;
+            }    
+          }
+          document.addEventListener('DOMContentLoaded', loadbar, false);
+        }());
+          </script>
+        </head>
+        <body>
+            
+            <div id="overlay">
+                <div id="progstat"></div>
+                <div id="progress"></div>
+              </div>
     
     <section id="top-1" class="engine"><a href="#"></a></section>
 <section class="engine"></section><section class="team1 cid-rNnRkBHndV" id="team1-0">
-    <div class="sh-side-options" style="transition: all 0.3s ease-in-out 0s;">
-        <div class="sh-side-options-container" data-url="https://jevelin.shufflehound.com/hello/">
+    <div class="sh-side-options ifrms" style="transition: all 0.3s ease-in-out 0s;">
+        <div class="sh-side-options-container ifrms" data-url="https://jevelin.shufflehound.com/hello/">
         
             <a class="sh-side-options-item sh-side-options-item-trigger-demos sh-accent-color"
                 href="../sync">
@@ -353,18 +422,18 @@ content: "\e01d";
     
     
     </div>
-    <div style="display: flex;height: 30rem;margin-left: 1rem;margin-right:8rem;" >
+    <div style="display: flex;height: 30rem;margin-left: 1rem;margin-right:8rem;" class="ifrms" >
         <div style="flex: 3;">
             <h3 style="color: #838794;text-align: center;font-size: 1rem;font-weight: bolder;">
                 Click on to the left and right end of the slider to manually slide
             </h3>
-            <iframe src="gallery.html" frameborder="0" style="width: 100%;height: 100%;border-radius: 1rem;margin-top: 1rem;"></iframe>
+            <iframe class="ifrms"  src="gallery.html" frameborder="0" style="width: 100%;height: 100%;border-radius: 1rem;margin-top: 1rem;"></iframe>
         </div>
         <div style="flex: 1;">
             <h3 style="color: #fff;text-align: center;font-size: 1rem;font-weight: bolder;">
                 Click on the left and right end of the slider to manually slide
             </h3>
-            <iframe src="profile" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+            <iframe class="ifrms"  src="profile" frameborder="0" style="width: 100%;height: 100%;"></iframe>
         </div>
     </div>
     <!-- <div style="display: flex;height: 9rem;margin-top: 1rem;margin-left: 1rem;">
@@ -376,7 +445,7 @@ content: "\e01d";
         </div>
     </div> -->
     <!-- <p style="font-weight: 800;color: #796679;text-align: center;font-family: 'Nunito', sans-serif;">Hover on to news card for more details</p> -->
-    <div style="display: flex;height: auto;min-height: 35rem;margin-top: 4rem;margin-left: 1rem;">
+    <div style="display: flex;height: auto;min-height: 35rem;margin-top: 4rem;margin-left: 1rem;" class="ifrms" >
         <div style="flex: 7;">
             <h3 style="font-family: 'Nunito',sans-serif;color: #53588B;">Core Philosophy</h3>
             <p style="color:black;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;padding: 0 4px;">
@@ -395,10 +464,10 @@ content: "\e01d";
         </div>
         <div style="flex: 6;background: #eceefc;border-radius: 1rem;background: #343A40;background: white;">
             <h3 style="font-family: 'Nunito',sans-serif;color: #53588B;text-align: center;">News</h3>
-            <iframe src="news" frameborder="0" style="width: 100%;height: 35rem"></iframe>
+            <iframe class="ifrms"  src="news" frameborder="0" style="width: 100%;height: 35rem"></iframe>
         </div>
     </div>
-    <div style="display: flex;height: auto;min-height: 25rem;margin-bottom: 15rem;margin-top: 1rem;">
+    <div style="display: flex;height: auto;min-height: 25rem;margin-bottom: 15rem;margin-top: 1rem;" class="ifrms" >
         <div style="flex: 7;padding: 4px;margin-left: 1rem;">
             <h3 style="font-family: 'Nunito',sans-serif;color: #53588B;">Fusion of Software Engineering and Educational Technologies</h3>
             <p style="color:black;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;padding: 0 4px;">
@@ -407,7 +476,7 @@ content: "\e01d";
         </div>
         <div style="flex: 6;">
             <h2 style="color:#53588b;text-align:center;margin-bottom:2rem;font-family:'Nunito',sans-serif;">Research Areas</h2>
-            <iframe src="../areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
+            <iframe class="ifrms"  src="../areas" frameborder="0" style="width: 100%;height: 25rem;margin: 0 1rem;"></iframe>
         </div>
     </div>
    

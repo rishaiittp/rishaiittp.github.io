@@ -311,12 +311,81 @@ content: "\e01d";
   </style>
   
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-</head>
-<body>
+  <style>        
+    #overlay{
+        font: 200 16px/1 Helvetica, Arial, sans-serif;
+      position:fixed;
+      z-index:99999;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      background:rgba(0,0,0,0.9);
+      transition: 1s 0.4s;
+    }
+    #progress{
+      height:1px;
+      background:#fff;
+      position:absolute;
+      width:0;
+      top:50%;
+    }
+    #progstat{
+      font-size:0.7em;
+      letter-spacing: 3px;
+      position:absolute;
+      top:50%;
+      margin-top:-40px;
+      width:100%;
+      text-align:center;
+      color:#fff;
+    }
+      </style>
+      <script>
+          ;(function(){
+      function id(v){return document.getElementById(v); }
+      function loadbar() {
+        var ovrl = id("overlay"),
+            prog = id("progress"),
+            stat = id("progstat"),
+            img = document.getElementsByClassName('ifrms'),
+            c = 0;
+            tot = img.length;
+    
+        function imgLoaded(){
+          c += 1;
+          var perc = ((100/tot*c) << 0) +"%";
+          prog.style.width = perc;
+          stat.innerHTML = "Loading "+ perc;
+          if(c===tot) return doneLoading();
+        }
+        function doneLoading(){
+          ovrl.style.opacity = 0;
+          setTimeout(function(){ 
+            ovrl.style.display = "none";
+          }, 1200);
+        }
+        for(var i=0; i<tot; i++) {
+          var tImg     = new Image();
+          tImg.onload  = imgLoaded;
+          tImg.onerror = imgLoaded;
+          tImg.src     = img[i].src;
+        }    
+      }
+      document.addEventListener('DOMContentLoaded', loadbar, false);
+    }());
+      </script>
+    </head>
+    <body>
+        
+        <div id="overlay">
+            <div id="progstat"></div>
+            <div id="progress"></div>
+          </div>
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
 </section>
 <section class="engine"></section><section class="team1 cid-rNnRkBHndV" id="team1-0">
-    <div class="sh-side-options" style="transition: all 0.3s ease-in-out 0s;">
+    <div class="sh-side-options ifrms" style="transition: all 0.3s ease-in-out 0s;">
         <div class="sh-side-options-container" data-url="https://jevelin.shufflehound.com/hello/">
         
             <a class="sh-side-options-item sh-side-options-item-trigger-demos sh-accent-color"
@@ -375,7 +444,7 @@ content: "\e01d";
 
      
 
-    <div class="container">
+    <div class="container ifrms">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
                 <blockquote>
@@ -388,14 +457,14 @@ content: "\e01d";
         
     </div>
 </section>
-<object data="assets/1-RISHA Research Lab Core Principles and Guidelines.pdf" type="application/pdf" width="100%" height="100%" id="pdf">
+<object data="assets/1-RISHA Research Lab Core Principles and Guidelines.pdf" class="ifrms" type="application/pdf" width="100%" height="100%" id="pdf">
 </object>
 
 <section class="mbr-section article content1 cid-rNnYIYY5rY" id="content2-8">
 
      
 
-    <div class="container">
+    <div class="container ifrms">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
                 <blockquote>
@@ -408,7 +477,7 @@ content: "\e01d";
         
     </div>
 </section>
-<object data="assets/2 - Detailed Guidelines ISHA Research Lab.pdf" type="application/pdf" width="100%" height="100%" id="pdf">
+<object data="assets/2 - Detailed Guidelines ISHA Research Lab.pdf" type="application/pdf" width="100%" height="100%" id="pdf" class="ifrms">
 </object>
 
 

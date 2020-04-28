@@ -299,62 +299,84 @@ content: "\e01d";
   }
   </style>
   
-</head>
-<body>
+  <style>        
+    #overlay{
+        font: 200 16px/1 Helvetica, Arial, sans-serif;
+      position:fixed;
+      z-index:99999;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      background:rgba(0,0,0,0.9);
+      transition: 1s 0.4s;
+    }
+    #progress{
+      height:1px;
+      background:#fff;
+      position:absolute;
+      width:0;
+      top:50%;
+    }
+    #progstat{
+      font-size:0.7em;
+      letter-spacing: 3px;
+      position:absolute;
+      top:50%;
+      margin-top:-40px;
+      width:100%;
+      text-align:center;
+      color:#fff;
+    }
+      </style>
+      <script>
+          ;(function(){
+      function id(v){return document.getElementById(v); }
+      function loadbar() {
+        var ovrl = id("overlay"),
+            prog = id("progress"),
+            stat = id("progstat"),
+            img = document.getElementsByClassName('ifrms'),
+            c = 0;
+            tot = img.length;
+    
+        function imgLoaded(){
+          c += 1;
+          var perc = ((100/tot*c) << 0) +"%";
+          prog.style.width = perc;
+          stat.innerHTML = "Loading "+ perc;
+          if(c===tot) return doneLoading();
+        }
+        function doneLoading(){
+          ovrl.style.opacity = 0;
+          setTimeout(function(){ 
+            ovrl.style.display = "none";
+          }, 1200);
+        }
+        for(var i=0; i<tot; i++) {
+          var tImg     = new Image();
+          tImg.onload  = imgLoaded;
+          tImg.onerror = imgLoaded;
+          tImg.src     = img[i].src;
+        }    
+      }
+      document.addEventListener('DOMContentLoaded', loadbar, false);
+    }());
+      </script>
+    </head>
+    <body>
+        
+        <div id="overlay">
+            <div id="progstat"></div>
+            <div id="progress"></div>
+          </div>
   
     <section id="top-1" class="engine" style="display: none;"><a href="#"></a></section>
   <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
-    
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #f2f2f2;">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #252525;">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <div class="menu-logo" >
-            <div class="navbar-brand" style="margin-left: 1rem;">
-                <span class="navbar-logo" style="margin-left: 0;">
-                    <a href="index">
-                         <img src="favicon.png" title="" style="height: 3rem;">
-                    </a>
-                </span>
-                <span class="navbar-caption-wrap">
-                    <a class="navbar-caption text-white display-4" style="font-family: garamond;font-style: italic;font-size: 1rem !important;padding: 0rem;" href="index" id="title">Research In Intelligent Software & Human Analytics (RISHA) Lab</a>
-                    <span style="font-size: 2rem;margin-left: 0rem;">&nbsp;&#8608;</span>
-                </span>
-                    
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true" style="margin: 0;padding: 0;padding-left: 0;width: 100%;">
-                <li class="nav-item">
-                    <a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="#">Home</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="projects/index">Projects</a>
-                </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="lab/index">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="lab/papers/index">Papers
-                    </a>
-                </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="lab/team/about">Team</a></li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="https://google.com">Blog</a></li>
-                    
-                    <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="teaching">Teaching
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="bio">Bio</a></li>
-            
-                </ul>
-            
-        </div>
-    </nav>
 </section>
 <section class="team1 cid-rNnRkBHndV" id="team1-0">
-    <div class="sh-side-options" style="transition: all 0.3s ease-in-out 0s;">
-        <div class="sh-side-options-container" data-url="https://jevelin.shufflehound.com/hello/">
+    <div class="sh-side-options ifrms" style="transition: all 0.3s ease-in-out 0s;">
+        <div class="sh-side-options-container ifrms" data-url="https://jevelin.shufflehound.com/hello/">
         
             <a class="sh-side-options-item sh-side-options-item-trigger-demos sh-accent-color"
                 href="sync">
@@ -407,7 +429,7 @@ content: "\e01d";
     
     </div>
   
-    <div style="display: flex;margin-left: 1rem;">
+    <div style="display: flex;margin-left: 1rem;" class="ifrms">
         <div style="flex: 1;">
             <p style="color: black;font-style: italic;">
                 "The best thing a teacher can do is to bring out the best in students in best ways!!!"
@@ -432,7 +454,7 @@ content: "\e01d";
             <iframe src="teaching_timeline" frameborder="0" style="width: 100%;height: 100%;"></iframe>
         </div>
     </div>
-    <div style="padding: 0 1rem;">
+    <div style="padding: 0 1rem;" class="ifrms">
         <div style="display: flex;">
             <div style="flex: 1;">
                 <h3 style="color: #53588b;">

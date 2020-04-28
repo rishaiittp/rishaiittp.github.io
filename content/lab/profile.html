@@ -321,32 +321,102 @@
       window.parent.postMessage("resize", "*");
     }
   </script>
-  </head>
-  <body translate="no">
+  </style>
+  <style>        
+      #overlay{
+          font: 200 16px/1 Helvetica, Arial, sans-serif;
+        position:fixed;
+        z-index:99999;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        background:rgba(0,0,0,0.9);
+        transition: 1s 0.4s;
+      }
+      #progress{
+        height:1px;
+        background:#fff;
+        position:absolute;
+        width:0;
+        top:50%;
+      }
+      #progstat{
+        font-size:0.7em;
+        letter-spacing: 3px;
+        position:absolute;
+        top:50%;
+        margin-top:-40px;
+        width:100%;
+        text-align:center;
+        color:#fff;
+      }
+        </style>
+        <script>
+            ;(function(){
+        function id(v){return document.getElementById(v); }
+        function loadbar() {
+          var ovrl = id("overlay"),
+              prog = id("progress"),
+              stat = id("progstat"),
+              img = document.getElementsByClassName('ifrms'),
+              c = 0;
+              tot = img.length;
+      
+          function imgLoaded(){
+            c += 1;
+            var perc = ((100/tot*c) << 0) +"%";
+            prog.style.width = perc;
+            stat.innerHTML = "Loading "+ perc;
+            if(c===tot) return doneLoading();
+          }
+          function doneLoading(){
+            ovrl.style.opacity = 0;
+            setTimeout(function(){ 
+              ovrl.style.display = "none";
+            }, 1200);
+          }
+          for(var i=0; i<tot; i++) {
+            var tImg     = new Image();
+            tImg.onload  = imgLoaded;
+            tImg.onerror = imgLoaded;
+            tImg.src     = img[i].src;
+          }    
+        }
+        document.addEventListener('DOMContentLoaded', loadbar, false);
+      }());
+        </script>
+      </head>
+      <body translate="no">
+          
+          <div id="overlay">
+              <div id="progstat"></div>
+              <div id="progress"></div>
+            </div>
     <section id="top-1" class="engine"><a href="#"></a></section>
-  <div style="margin: 0;padding: 0;">
-    <div class="card">
+  <div style="margin: 0;padding: 0;" class="ifrms">
+    <div class="card ifrms">
       <div class="ds-top"></div>
       <div class="avatar-holder">
       <img src="../assets/images/sridhar.jpg" alt="Sridhar Chimalakonda">
       </div>
-      <div class="name">
+      <div class="name ifrms">
       <a href="https://researchweb.iiit.ac.in/~sridhar_ch/home" target="_blank" style="color: Black;">Dr. Sridhar Chimalakonda</a>
       <a style="color: Black;font-size: 15px;color: #53588B;margin-top: 0.5rem;">Assistant Professor</a><br>
       <a href="https://iittp.ac.in/dr-sridhar-chimalakonda"target="_blank" style="color: #53588B;font-size: 15px;">Indian Institute of Technology Tirupati</a> 
       </div>
-      <div class="ds-info">
-      <div class="ds pens">
+      <div class="ds-info ifrms">
+      <div class="ds pens ifrms">
       <h6 title="Number of pens created by the user">Papers <i class="fa fa-edit"></i></h6>
       <p style="margin-top: 0.5rem;">200</p>
       </div>
-      <div class="ds projects">
+      <div class="ds projects ifrms">
       <h6 title="Number of projects created by the user">Projects <i class="fa fa-project-diagram"></i></h6>
       <p style="margin-top: 0.5rem;">100</p>
       </div>
      
       </div>
-      <div class="ds-skill" style="margin-left: 1.5rem;">
+      <div class="ds-skill ifrms" style="margin-left: 1.5rem;">
           <div style="display: flex;">
               <a id="hi"  href="https://www.researchgate.net/profile/Sridhar_Chimalakonda" target="_blank" style="flex: 1;"> <i style=" padding: 0.75rem;padding-left: 1.1rem;padding-right: 0rem;" class="fa fa-registered" aria-hidden="true"></i></a>
               <a id="hi"  href="https://dblp.uni-trier.de/pers/c/Chimalakonda:Sridhar" target="_blank" style="flex: 1;"> <i style="padding: 0.75rem;padding-right: 0rem;" class="fa fa-dashcube" aria-hidden="true"></i></a>
@@ -354,7 +424,7 @@
               <a id="hi"  href="https://github.com/enthusiastic2learn" target="_blank" style="flex: 1;"> <i style="padding: 0.75rem;padding-left: 1rem;padding-right: 0rem;" class="fa fa-github" aria-hidden="true"></i></a>
           </div>
       </div>
-      <div class="ds-skill2">
+      <div class="ds-skill2 ifrms">
         <h6 style="color: #53588b;width: 9rem;margin-top: 0.5rem;font-size: 1rem;position: relative;"><i class="fa fa-envelope-o" aria-hidden="true" style="margin-right: 0.5rem;"></i>ch@iittp.ac.in</h6>
         <h6 style="color: #53588b;width: 10rem;margin-top: 0.5rem;font-size: 1rem;position: relative;">+91-9490705384</h6>
     </div>
