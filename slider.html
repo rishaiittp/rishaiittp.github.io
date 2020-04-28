@@ -1,0 +1,265 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <title>CodePen - Nautilus Slideshow</title>
+    <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    
+    body {
+      background: black;
+      font-family: roboto;
+    }
+    
+    .container {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+              flex-direction: row;
+    }
+    .container section.forward {
+      -webkit-box-flex: 1;
+              flex-grow: 1;
+      cursor: pointer;
+    }
+    .container section.back {
+      -webkit-box-flex: 1;
+              flex-grow: 1;
+      cursor: pointer;
+      background: #52F9D4;
+      background: #eeeeee;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -webkit-box-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+              justify-content: center;
+    }
+    
+    .nautilus {
+      background: #ddd;
+      position: relative;
+      min-width: 161.8034vh;
+      height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .nautilus > div {
+      position: absolute;
+      z-index: 900;
+      -webkit-transition: all 400ms ease-out;
+      transition: all 400ms ease-out;
+      -webkit-animation: genie 400ms forwards ease-out;
+              animation: genie 400ms forwards ease-out;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      width: 9.016986vh;
+      height: 5.57280vh;
+      left: 114.59055442vh;
+      top: 70.820377901vh;
+      opacity: 0;
+    }
+    .nautilus > div:nth-child(1) {
+      opacity: 1;
+      width: 100vh;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #52F9D4;
+      z-index: 999;
+    }
+    .nautilus > div:nth-child(2) {
+      opacity: 1;
+      width: 61.8034vh;
+      height: 61.8034vh;
+      top: 0vh;
+      left: 100vh;
+      background-color: #51E3C2;
+      z-index: 998;
+    }
+    .nautilus > div:nth-child(3) {
+      opacity: 1;
+      width: 38.19783669vh;
+      height: 38.19783669vh;
+      top: 61.8034vh;
+      left: 123.60615331vh;
+      background-color: #53C7AD;
+      z-index: 997;
+    }
+    .nautilus > div:nth-child(4) {
+      opacity: 1;
+      width: 23.60778717vh;
+      height: 23.60778717vh;
+      top: 76.39221283vh;
+      left: 100vh;
+      background-color: #51AF9A;
+      z-index: 996;
+    }
+    .nautilus > div:nth-child(5) {
+      opacity: 1;
+      height: 14.59055442vh;
+      width: 14.59055442vh;
+      top: 61.8034vh;
+      left: 100vh;
+      background: #4D9686;
+      z-index: 995;
+    }
+    .nautilus > div:nth-child(6) {
+      opacity: 1;
+      height: 9.016986vh;
+      width: 9.016986vh;
+      top: 61.8034vh;
+      left: 114.59055442vh;
+      background: #498376;
+      z-index: 994;
+    }
+    .nautilus > div:nth-child(7) {
+      opacity: 1;
+      width: 9.016986vh;
+      height: 5.57280vh;
+      left: 114.59055442vh;
+      top: 70.820377901vh;
+      z-index: 993;
+    }
+    
+    @-webkit-keyframes genie {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes genie {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60px;
+      width: 200px;
+    }
+    
+    .column {
+      padding: 1rem;
+      color: #333;
+    }
+    .column h1, .column h2, .column h3, .column h4 {
+      font-weight: 300;
+    }
+    .column h1 {
+      font-size: 48px;
+    }
+    .column h2 {
+      font-size: 24px;
+    }
+    </style>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    <script>
+        var count = 0;
+    </script>
+    <script>
+        setInterval(() => { 
+            document.getElementById('next').click();
+            switch (count%7) {
+                case 0:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+                case 1:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+                case 2:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+                case 3:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+                case 4:
+                    document.getElementById('head').innerHTML = 'ICALT 2019'
+                    document.getElementById('content').innerHTML = '27-29 FEB 2020 @ JABALPUR,INDIA';
+                    break;
+                case 5:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+                default:
+                    document.getElementById('head').innerHTML = 'Heading ' + count;
+                    document.getElementById('content').innerHTML = 'Content ' + count;
+                    break;
+            }
+            count = count  + 1;
+        }, 3000);
+    </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+   <style>
+       body{
+           font-family: 'Nunito',sans-serif;
+       }
+   </style>
+    </head>
+    <body translate="no">
+    <div class="container">
+    <section class="nautilus">
+    <div style="background: url('content/assets/images/h1.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h2.png') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h3.jpg') center center / cover no-repeat ">
+    </div><div style="background: url('content/assets/images/h4.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h5.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h6.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/meet1.jpg') center center / cover no-repeat "></div>
+    </section>
+    <section class="back">
+    <div class="column">
+    <h3 id="head">Head1</h3>
+    <h4 id="content">Content 1</h4>
+    <h2 id="next">Next</h2>
+    </div>
+    </section>
+    </div>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script id="rendered-js">
+    var interval = 500;
+    
+    var slide;
+    
+    $('section.back').click(function () {
+      var slide = $('.nautilus div:last-child').remove();
+      $('.nautilus').prepend(slide);
+    });
+    //# sourceURL=pen.js
+        </script>
+    
+    
+    </body></html>
