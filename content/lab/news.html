@@ -34,7 +34,10 @@
         }, 100);
     </script>
  </style>
- <style>        
+ <style>   
+    .divi{
+       background:transparent;
+    }     
      #overlay{
          font: 200 16px/1 Helvetica, Arial, sans-serif;
        position:fixed;
@@ -48,7 +51,7 @@
      }
      #progress{
        height:1px;
-       background:#fff;
+       background:#FFF;
        position:absolute;
        width:0;
        top:50%;
@@ -99,11 +102,11 @@
      }());
        </script>
      </head>
-     <body class="ifrms">
+     <body translate="no">
          
          <div id="overlay">
-             <div id="progstat"></div>
-             <div id="progress"></div>
+             <div id="progstat" class="divi"></div>
+             <div id="progress" class="divi"></div>
            </div>
         <marquee class="ifrms" behavior="scroll" direction="up" scrollamount="15" style="width: 100%;height: 100%;" id="marquee" onmouseover="this.stop()" onmouseout="this.start()">
             <!-- <div style="height: auto;min-height: 5rem;border: 1px solid #eceeff;display: flex;border-radius: 1rem;" id="f1">
