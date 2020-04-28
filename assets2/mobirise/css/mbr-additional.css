@@ -1,0 +1,30 @@
+#ext_menu-0 .mbr-brand__name {
+  font-size: 16px;
+}
+#ext_menu-0.mbr-navbar--stuck .mbr-navbar__section {
+  background: #f2f2f2;
+}
+#ext_menu-0 .mbr-navbar__section {
+  background: #f2f2f2;
+}
+#ext_menu-0 .mbr-navbar__hamburger {
+  color: #000000;
+}
+#ext_menu-0 .mbr-brand__name a {
+  font-size: 13px;
+}
+#ext_menu-1 .mbr-brand__name {
+  font-size: 16px;
+}
+#ext_menu-1.mbr-navbar--stuck .mbr-navbar__section {
+  background: #f2f2f2;
+}
+#ext_menu-1 .mbr-navbar__section {
+  background: #f2f2f2;
+}
+#ext_menu-1 .mbr-navbar__hamburger {
+  color: #000000;
+}
+#ext_menu-1 .mbr-brand__name a {
+  font-size: 13px;
+}

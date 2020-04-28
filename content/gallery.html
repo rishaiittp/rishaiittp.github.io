@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700|Space+Mono">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
   <style>
   body {
     height: 100%;
@@ -45,7 +46,7 @@
     display: inline-block;
     padding: 0.35em;
     margin: 0;
-    font-family: "Space Mono", monospace;
+    font-family: "Nunito", sans-serif;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -218,6 +219,7 @@
     display: block;
     background-size: cover;
     background-attachment: fixed;
+    margin-left: 0rem;
     background-position: 50%;
     -webkit-backface-visibility: hidden;
     height: 0%;
@@ -250,7 +252,11 @@
       window.parent.postMessage("resize", "*");
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <script>
+    setInterval(() => {
+      document.getElementById('next').click()
+    }, 3000);
+  </script>
   </head>
   <body translate="no" class="">
   <main>
@@ -258,74 +264,110 @@
   <section class="slides-nav">
   <nav class="slides-nav__nav">
   <button class="slides-nav__prev js-prev">Prev</button>
-  <button class="slides-nav__next js-next">Next</button>
+  <button class="slides-nav__next js-next" id="next">Next</button>
   </nav>
   </section>
-  <section class="slide is-active">
+  <section class="slide is-active stop">
   <div class="slide__content">
-  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/nfTA8pdaq9A/2000x1100)"></div></figure>
+  <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
   <header class="slide__header">
-  <h2 class="slide__title" style="font-family: 'Nunito',sans-serif;">
-  <span class="title-line" style="margin: 0 auto;"><span>ICALT 2019</span></span>
-  <span class="title-line"><span>Or Scroll Fool</span></span>
-  </h2>
-  </header>
-  </div>
-  </section>
-  <section class="slide is-next">
-  <div class="slide__content">
-  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/okmtVMuBzkQ/2000x1100)"></div></figure>
-  <header class="slide__header">
-  <h2 class="slide__title">
-  <span class="title-line"><span>Slide Two</span></span>
-  <span class="title-line"><span>Dood Mood</span></span>
-  </h2>
-  </header>
-  </div>
-  </section>
-  <section class="slide">
-  <div class="slide__content">
-  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/WuQME0I_oZA/2000x1100)"></div></figure>
-  <header class="slide__header">
-  <h2 class="slide__title">
-  <span class="title-line"><span>This Right</span></span>
-  <span class="title-line"><span>Here Makes Three</span></span>
-  </h2>
-  </header>
-  </div>
-  </section>
-  <section class="slide">
-  <div class="slide__content">
-  <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/NsWcRlBT_74/2000x1100)"></div></figure>
-  <header class="slide__header">
-  <h2 class="slide__title">
-  <span class="title-line"><span>How Now</span></span>
-  <span class="title-line"><span>Part Four More</span></span>
-  </h2>
-  </header>
-  </div>
-  </section>
-  <section class="slide">
-    <div class="slide__content">
-    <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/WuQME0I_oZA/2000x1100)"></div></figure>
-    <header class="slide__header">
     <h2 class="slide__title">
-    <span class="title-line"><span>This Right</span></span>
-    <span class="title-line"><span>Here Makes Three</span></span>
+      <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+        ICALT 2019 
+        <br><br>
+      <span style="font-size:1rem">
+        27-29 FEB 2020 @ JABALPUR,INDIA
+      </span>  
+      </span>
+ 
     </h2>
-    </header>
-    </div>
+  </header>
+  </div>
+  </section>
+  <section class="slide is-next stop">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+            ICALT 2019 
+            <br><br>
+          <span style="font-size:1rem">
+            27-29 FEB 2020 @ JABALPUR,INDIA
+          </span>  
+          </span>
+     
+        </h2>
+      </header>
+      </div>
+  </section>
+  <section class="slide stop">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+            ICALT 2019 
+            <br><br>
+          <span style="font-size:1rem">
+            27-29 FEB 2020 @ JABALPUR,INDIA
+          </span>  
+          </span>
+     
+        </h2>
+      </header>
+      </div>
+  </section>
+  <section class="slide stop">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+            ICALT 2019 
+            <br><br>
+          <span style="font-size:1rem">
+            27-29 FEB 2020 @ JABALPUR,INDIA
+          </span>  
+          </span>
+     
+        </h2>
+      </header>
+      </div>
+  </section>
+  <section class="slide stop">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+            ICALT 2019 
+            <br><br>
+          <span style="font-size:1rem">
+            27-29 FEB 2020 @ JABALPUR,INDIA
+          </span>  
+          </span>
+     
+        </h2>
+      </header>
+      </div>
     </section>
-    <section class="slide">
-    <div class="slide__content">
-    <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/NsWcRlBT_74/2000x1100)"></div></figure>
-    <header class="slide__header">
-    <h2 class="slide__title">
-    <span class="title-line"><span>How Now</span></span>
-    <span class="title-line"><span>Part Four More</span></span>
-    </h2>
-    </header>
-    </div>
+    <section class="slide stop">
+      <div class="slide__content">
+        <figure class="slide__figure"><div class="slide__img" style="background-image: url(assets/images/h5.jpg);opacity: 0.6;"></div></figure>
+        <header class="slide__header">
+          <h2 class="slide__title">
+            <span class="title-line" style="font-family: 'Nunito',sans-serif;font-size: 1.3rem;">
+              ICALT 2019 
+              <br><br>
+            <span style="font-size:1rem">
+              27-29 FEB 2020 @ JABALPUR,INDIA
+            </span>  
+            </span>
+       
+          </h2>
+        </header>
+        </div>
     </section>
   
   </section>

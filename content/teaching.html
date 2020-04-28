@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="RISHA LAB">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <title>Sridhar Chimalakonda | RISHA LAB IITTP</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <style>
+      .btn1{
+        width: 100%;
+        background-color: #007CFF;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align:left;
+        font-size: 2rem;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    #pdf{
+            height: 50rem;
+            background-color: #eeeeee;
+            background: black;
+        }
+      #sideNav a{
+        margin-top: 10rem;
+        position: absolute;
+        right: -130px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 210px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 5px 0 0 5px;
+      }
+      #sideNav a:hover{
+        color: #456FFF;
+        right: 0;
+      }
+      #guidelines{
+          top: 20px;
+          background-color: black;
+      }
+      @font-face {
+        font-family: 'SamsungOne 700';
+        font-style: normal;
+        font-weight: normal;
+        src: local('SamsungOne 700'), url('SamsungOne-700.woff') format('woff');
+        }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7678d997fc.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+      .sh-side-options {
+          position: fixed;
+          top: 0; bottom: 0;
+          right: 0;
+          z-index: 12345678902;
+          transition: 0.3s all ease;
+          transition: 0.2s all;
+          padding: 0 0;
+          width: 420px;
+          transform: translateX(420px);
+      }
+      .sh-side-options.open {
+          transform: translateX(0px);
+          box-shadow: 0 0px 39px 10px rgba(0,0,0,0.2);
+      }
+      .sh-side-options-container {
+          position: absolute;
+          top: 216px; left: -75px;
+          width: 60px;
+          background-color: rgba(255,255,2555,1);
+          border-radius: 5px;
+          margin-right: 15px;
+          box-shadow: -10px 0px 20px 2px rgba(0,0,0,.06);
+      }
+      .sh-side-options.sh-side-options-pages .sh-side-options-container {
+          top: 150px;
+      }
+      .sh-side-options-item {
+          display: block;
+          text-align: center;
+          margin: 0px;
+          transition: 0.3s all ease-in-out;
+          position: relative;
+          padding: 7px;
+          cursor: pointer;
+      }
+      .sh-side-options-item:not(:last-child) {
+          border-bottom: 1px solid #f1f3fc;
+      }
+      .sh-side-options-item-container {
+          border-radius: 4px;
+          padding: 8px 0;
+      }
+      .sh-side-options-item:hover .sh-side-options-item-container,
+      .sh-side-options-item:focus .sh-side-options-item-container,
+      .sh-side-options.open .sh-side-options-item-trigger-demos .sh-side-options-item-container {
+          background-color: #f3f5fd;
+      }
+      .sh-side-options-item i {
+          font-size: 22px;
+      }
+      .sh-side-options-item:not(:hover):not(:focus) {
+          color: #9396a5!important;
+      }
+      .sh-side-options-item:hover .sh-side-options-hover {
+          opacity: 1;
+          transform: translateX(-97%);
+      }
+      .sh-side-options-hover {
+          position: absolute;
+          background-color: #ffffff;
+          color: #32343d;
+          padding: 20px 26px;
+          transform: translateX(-70%);
+          left: 0px;
+          top: 0;
+          bottom: 0;
+          opacity: 0;
+          transition: 0.2s all ease-in-out;
+          z-index: -100;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          font-size: 13px;
+          box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.08);
+      }
+      .sh-side-options-hover span {
+          padding: 0px 3px;
+      }
+      @media (max-width: 700px) {
+          .sh-side-options {
+              width: 52px;
+          }
+          .sh-side-options-item {
+              padding: 10px 0;
+          }
+        .sh-side-options-item i {
+              font-size: 16px;
+          }
+      }
+      @media (max-width: 600px) {
+      .sh-side-options {
+              display: none;
+          }
+      }
+      @media (max-height: 500px) {
+          .sh-side-options {
+              top: 120px!important;
+          }
+      }
+      .sh-side-options-item i {
+          color: #9396a5!important;
+      }
+      
+      .sh-side-options.open .sh-side-options-item-trigger-demos i,
+      .sh-side-options-item:hover i,
+      .sh-side-options-item:focus i {
+          color: #294cff!important;
+      }
+      .sh-side-demos-container {
+          top: 0; left: 0; right: -17px; bottom: 0;
+          position: absolute;
+          overflow-y: scroll;
+          background-color: #fff;
+          background-repeat: no-repeat;
+          background-position: right top;
+          padding: 22px;
+      }
+      
+      body.admin-bar .sh-side-demos-container {
+          top: 32px;
+      }
+      .sh-side-demos-intro {
+          text-align: center;
+      }
+      
+      .sh-side-demos-intro-title {
+          font-size: 24px;
+          font-weight: 300;
+          margin-top: 25px;
+          margin-bottom: 15px;
+      }
+      
+      .sh-side-demos-intro-title img {
+          height: 24px;
+          top: -6px;
+          position: relative;
+      }
+      .sh-side-demos-intro-descr {
+          max-width: 250px;
+          margin: 0 auto;
+          display: table;
+          color: #838794;
+      }
+      .sh-side-demos-container-close {
+          position: absolute;
+          top: 22px;
+          right: 22px;
+          cursor: pointer;
+      }
+      
+      .sh-side-demos-container-close i {
+          color: #c5c5c5;
+          font-size: 18px;
+          transition: 0.3s all ease;
+      }
+      
+      .sh-side-demos-container-close:hover i,
+      .sh-side-demos-container-close:focus i {
+          color: #7f7f7f;
+      }
+      .sh-side-demos-loop-container {
+          position: relative;
+          margin: 0 -10px;
+          margin-top: 28px;
+      }
+      
+      .sh-side-demos-item {
+          display: inline-block;
+          position: relative;
+          margin-right: -4px;
+          margin-bottom: 25px;
+          width: 50%;
+          padding: 0 10px;
+          text-align: center;
+          transition: .3s all ease;
+          top: 0;
+      }
+      
+      .sh-side-demos-item:hover {
+          top: -4px;
+      }
+      
+      .sh-side-demos-item .sh-image-lazy-loading {
+          border-radius: 3px;
+          box-shadow: 0 2px 20px 1px rgba(0,0,0,.1);
+      }
+      
+      .sh-side-demos-item img {
+          border-radius: 3px;
+      }
+      
+      .sh-side-demos-item-name {
+          font-size: 12px;
+          color: #32343d;
+          font-weight: 600;
+          padding-top: 10px;
+      }
+      
+      .sh-side-demos-item-tag {
+          position: absolute!important;
+          width: auto!important;
+          height: auto!important;
+          top: 4px;
+          left: 6px;
+          background-color: #ff5944;
+          color: #fff;
+          font-size: 9px;
+          font-weight: 600;
+          display: block;
+          padding: 1px 9px;
+          text-transform: capitalize;
+          border-radius: 100px;
+      }
+      .icon-eyeglass:before {
+content: "\e01d";
+}
+@font-face {
+    font-family: garamond;
+    src: url('garamond/Garamond Medium Italic.ttf');
+  }
+  #title:hover{
+    border: none;
+    border-radius: 0;
+  }
+  strong{
+      font-size: 1.2rem;
+      font-weight: bolder;
+  }
+  </style>
+  
+</head>
+<body>
+  
+    <section id="top-1" class="engine" style="display: none;"><a href="#"></a></section>
+  <section class="menu cid-rNnS6TB9s8" once="menu" id="menu1-3">
+    
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: #f2f2f2;">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #252525;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo" >
+            <div class="navbar-brand" style="margin-left: 1rem;">
+                <span class="navbar-logo" style="margin-left: 0;">
+                    <a href="index">
+                         <img src="favicon.png" title="" style="height: 3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption text-white display-4" style="font-family: garamond;font-style: italic;font-size: 1rem !important;padding: 0rem;" href="index" id="title">Research In Intelligent Software & Human Analytics (RISHA) Lab</a>
+                    <span style="font-size: 2rem;margin-left: 0rem;">&nbsp;&#8608;</span>
+                </span>
+                    
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true" style="margin: 0;padding: 0;padding-left: 0;width: 100%;">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="#">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="projects/index">Projects</a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="lab/index">Lab</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="lab/papers/index">Papers
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="lab/team/about">Team</a></li>
+                <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="https://google.com">Blog</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="teaching">Teaching
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" style="font-size: 0.9rem !important;" href="bio">Bio</a></li>
+            
+                </ul>
+            
+        </div>
+    </nav>
+</section>
+<section class="team1 cid-rNnRkBHndV" id="team1-0">
+    <div class="sh-side-options" style="transition: all 0.3s ease-in-out 0s;">
+        <div class="sh-side-options-container" data-url="https://jevelin.shufflehound.com/hello/">
+        
+            <a class="sh-side-options-item sh-side-options-item-trigger-demos sh-accent-color"
+                href="sync">
+                <div class="sh-side-options-item-container">
+                    <i class="far fa-calendar-check"></i>
+                </div>
+                <div class="sh-side-options-hover" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 0.8rem;">
+                    Today's<span></span>SYNC
+                </div>
+            </a>
+    
+    
+            <a href="JoinRishaLab" class="sh-side-options-item sh-accent-color">
+                <div class="sh-side-options-item-container">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="sh-side-options-hover" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 0.8rem;">
+                    Join<span></span>RISHA<span></span>Lab<span></span>Today
+                </div>
+            </a>
+    
+            <a href="core_principles" class="sh-side-options-item sh-accent-color">
+                <div class="sh-side-options-item-container">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <div class="sh-side-options-hover" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 0.8rem;">
+                    Core<span></span>Principles<span></span>&<span></span>Guidelines
+                </div>
+            </a>
+    
+            <a href="distinguishedResearch" class="sh-side-options-item sh-accent-color">
+                <div class="sh-side-options-item-container">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="sh-side-options-hover" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 0.8rem;">
+                    Distinguished<span></span>Research<span></span>Papers
+                </div>
+            </a>
+    
+            <a href="gallery" class="sh-side-options-item sh-accent-color">
+                <div class="sh-side-options-item-container">
+                    <i class="fas fa-photo-video"></i>
+                </div>
+                <div class="sh-side-options-hover" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 0.8rem;">
+                    Gallery
+                </div>
+            </a>
+        </div>
+    
+    
+    </div>
+  
+    <div style="display: flex;margin-left: 1rem;">
+        <div style="flex: 1;">
+            <p style="color: black;font-style: italic;">
+                "The best thing a teacher can do is to bring out the best in students in best ways!!!"
+            </p>
+            <p style="color: black;">
+                The landscape of education has changed drastically in the past decade or so. Students today have access to most of the courses online taught from renowned professors and universities around the world. They also have access to websites like wikipedia, quora, stackoverflow for Q&A. What does teaching mean in this context?
+                <br>
+                I believe that teaching should inspire students beyond grades and jobs, instill foundations for life and push boundaries! I explored few experiments during my teaching, some worked and some did not! It is exciting and challenging to be a faculty during this emerging times!
+            </p>
+            <h3 style="color: #53588b;">
+                Some results from teaching experiments
+            </h3>
+            <p style="color: black;font-style: italic;">
+                "faculty support from bottom of the heart, no compromisation in quality of the course”
+                “This is the course which made us to realize what we are capable of. Its not because of the course, its because of instructor and his way of teaching”
+                Overall rating for instructor [Sridhar Chimalakonda] - “+100000... (zeroes go on forever :D :P)” “strength of the course is pushing students to their limits”
+                “Loved it :)” “...How to grab attention without boring...instructor’s commitment, way of explaining things, classroom activities...”
+            </p>
+        </div>
+        <div style="flex: 1;">
+            <h3 style="color: #53588b;text-align: center;">TEACHING TIMELINE 2020</h3>
+            <iframe src="teaching_timeline" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+        </div>
+    </div>
+    <div style="padding: 0 1rem;">
+        <div style="display: flex;">
+            <div style="flex: 1;">
+                <h3 style="color: #53588b;">
+                    Some Thoughts on What Makes Teaching Interesting?
+                </h3>
+                <p style="color: black;">
+                    <p style="font-style: italic;"> Can we motivate the best undergrads of IIT to solve societal challenges of India and deliver results?</p>
+                    ↠ It has the power to profoundly influence people's lives
+                   <br> ↠ Probably, the best way to align with state-of-the-art and state-of-the-practice of a subject
+                   <br> ↠ An opportunity to address several great challenges in collaboration with young minds, which otherwise is difficult to work alone
+                   <br> ↠ My research interests of educational technologies and an opporutnity to improve quality in Indian education
+                </p>
+            </div>
+            <div style="flex: 1;">
+                <h3 style="color: #53588b;">
+                    My Thoughts on Teaching
+                </h3>
+                <p style="color: black;font-style: italic;">
+                    <strong>Interact</strong> ↠ Informal at the outside - let students play, have fun, explore but be formal inside, meaning no compromise on quality! - clear learning goals, challenging exercises & high quality benchmarks!
+                    <br><strong>Innovate</strong> ↠ Have fixed and flexible components for every course and adapt it as per specific needs. Use innovative teaching practices to facilitate deeper learning of the subject
+                    <br><strong>Inspire</strong> ↠ Push their boundaries and provoke them to think, question and inquire beyond conventions
+                </p>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div style="flex: 1;margin-right: 1rem;">
+                <h3 style="color: #53588b;">
+                 <a href="https://researchweb.iiit.ac.in/~sridhar_ch/courses/sefp/home.html" target="_blank">Software Engineering (Foundations & Practice) </a>
+                </h3>
+                <h5>
+                    Monsoon 2015, 2016 @ IIIT Sri City
+                </h5>
+                <p style="font-style: italic;">
+                    This course provides foundations for design of quality software and at the same time application of these foundations to develop reasonably complex software systems. Focus is on providing foundations like abstraction, [de]composition... and different aspects like processes, requirements engineering, architecture, design, testing with rigorous practical exercises. More details about the course including learning objectives, lectures, exercises and so on are available at 
+                    <a href="https://researchweb.iiit.ac.in/~sridhar_ch/courses/sefp/home.html" target="_blank">sefp</a>
+                </p>
+                    <strong>Interactive Lectures</strong> ↠ Core content of the subject is introduced through seminal and state-of-art articles with discussions around How the topics would evolve in the next 5, 10, 20 years? For example, in the first lecture, the entire class was divided into two groups each figuring out What to develop? (requirements) and How to design? towards “Design of Candy Crush Saga” game
+                    <br><strong>Provocative Articles</strong> ↠ Classic papers and interesting notes were used instead of textbooks. For e.g., NATO conference reports and Dijkstra’s EWD’s were used to emphasize concepts like abstraction, components, proofs, design and so on
+                    <br><strong>Innovative Strategies</strong> ↠  Weekly learning reports in course repositories (via Github), video assignments, 5 minute in-class assignments, 3 minute narratives, a lecture of student’s choice (startups), exit slips (a note of attendance with learning), passion projects, a marathon lecture of 7 hours
+                    <br><strong>Design thinking exams</strong> ↠ Students are asked to argue for and against this statement “Software lifecyles are a myth. Despite so many of them, people never follow them and they still deliver software” in an end exam question
+                    <br><strong>Hackathon</strong> ↠   A crowdsourcing experiment - developing 60 games in 24 hours as part of mid-exam
+                    <br><strong>Continuous Evaluation</strong> ↠ A time-boxing approach (review every 24 hours) to design of software in a 12-day rigorous exercise that yielded good-quality software projects. This is a spin-off of Scrum, an agile software development process model.
+                    <br><strong>Course Feedback</strong> ↠  From anonymous feedback, the course was extremely successful but on the flip side, some students felt the course was heavy and demanded a lot of effort.
+                <p style="color: black;">
+                    <p style="font-style: italic;"> Can we motivate the best undergrads of IIT to solve societal challenges of India and deliver results?</p>
+                    ↠ It has the power to profoundly influence people's lives
+                   <br> ↠ Probably, the best way to align with state-of-the-art and state-of-the-practice of a subject
+                   <br> ↠ An opportunity to address several great challenges in collaboration with young minds, which otherwise is difficult to work alone
+                   <br> ↠ My research interests of educational technologies and an opporutnity to improve quality in Indian education
+                </p>
+            </div>
+            <div style="flex: 1;margin-left: 1rem;">
+                <h3 style="color: #53588b;">
+                    <a href="https://researchweb.iiit.ac.in/~sridhar_ch/courses/plfp/home.html" target="_blank">Programming Languages (Foundations & Practice)</a>
+                   </h3>
+                   <h5>
+                    Spring 2017 @ IIT Tirupati; Spring 2016, 2017 @ IIIT Sri City
+                   </h5>
+                   <p style="font-style: italic;">
+                    This course is an attempt to provide foundations for understanding the anatomy of programming languages whilst dissecting and analyzing these foundations in the context of several programming languages spanning across imperative, declarative paradigms. I briefly introduced topics such as correctness and axiomatic semantics through a series of lectures on ACM Turing Award articles. I used interesting languages such as Erlang (WhatsApp), Scala (Twitter), Clojure, Rust unlike conventional approaches. Specifications of programming languages were discussed from a design perspective.
+                   </p>
+                   <h3 style="color: #53588b;">
+                    Foundations of Programming [Primer]       
+                   </h3>  
+                   <h5>
+                    Programming exercises in imperative, objectoriented and functional paradigms
+                   </h5>
+                   <p style="font-style: italic;">
+                    Today programming is done by people from all branches of engineering including end users. Are they doing good programming? What does good mean? Is programming same for computers, mobiles? This course is an attempt to teach foundations of programming as a three-part approach. Specification, Implementation and Verification of programs, supported with rigorous practice. In this course, programming will be introduced as a problem solving and an intellectual discipline. How does writing large programs differ? What does a program for Twitter look like? How do you write one? How to write programs with desirable qualities? Is it possible to learn programming without a programming language? Why is it critical to think of design before programming? and how to do co-design?
+                   </p>
+                   <h3  style="color: #53588b;">
+                    Foundations of Software Engineering [Primer]
+                   </h3>
+                   <p style="font-style: italic;">
+                    Do you design software using an ad-hoc approach? How is design of software similar or different from design of electronic circuits or construction? This course proposes to teach basic foundations and essential constructs for design of software. The key goal of this course is to instill the notion of systematic software development and the necessary knowledge and skills early on to develop software. Students will learn systematic ways of developing software and apply these concepts towards developing reasonably complex software in a challenging project. Specifically, they will learn basics of requirements engineering, design methods, coding and testing techniques. The students will also learn and use version control, diagramming languages like UML, debugging and several tools to support their project.
+                   </p>
+            </div>
+        </div>         
+    </div>
+   
+   
+</section>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>
