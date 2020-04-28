@@ -33,8 +33,80 @@
           xhttp.send('link='+"rishaiittp/news/tree/master/news.html");
         }, 100);
     </script>
+   <style>
+
+    img{width:32.2%;}
+    
+    #overlay{
+        font: 200 16px/1 Helvetica, Arial, sans-serif;
+      position:fixed;
+      z-index:99999;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      background:rgba(0,0,0,0.9);
+      transition: 1s 0.4s;
+    }
+    #progress{
+      height:1px;
+      background:#fff;
+      position:absolute;
+      width:0;
+      top:50%;
+    }
+    #progstat{
+      font-size:0.7em;
+      letter-spacing: 3px;
+      position:absolute;
+      top:50%;
+      margin-top:-40px;
+      width:100%;
+      text-align:center;
+      color:#fff;
+    }
+      </style>
+      <script>
+          ;(function(){
+      function id(v){return document.getElementById(v); }
+      function loadbar() {
+        var ovrl = id("overlay"),
+            prog = id("progress"),
+            stat = id("progstat"),
+            img = document.images,
+            c = 0;
+            tot = img.length;
+    
+        function imgLoaded(){
+          c += 1;
+          var perc = ((100/tot*c) << 0) +"%";
+          prog.style.width = perc;
+          stat.innerHTML = "Loading "+ perc;
+          if(c===tot) return doneLoading();
+        }
+        function doneLoading(){
+          ovrl.style.opacity = 0;
+          setTimeout(function(){ 
+            ovrl.style.display = "none";
+          }, 1200);
+        }
+        for(var i=0; i<tot; i++) {
+          var tImg     = new Image();
+          tImg.onload  = imgLoaded;
+          tImg.onerror = imgLoaded;
+          tImg.src     = img[i].src;
+        }    
+      }
+      document.addEventListener('DOMContentLoaded', loadbar, false);
+    }());
+      </script>
     </head>
     <body style="background: transparent;">
+        
+        <div id="overlay">
+            <div id="progstat"></div>
+            <div id="progress"></div>
+          </div>
         <marquee behavior="scroll" direction="up" scrollamount="15" style="width: 100%;height: 100%;" id="marquee" onmouseover="this.stop()" onmouseout="this.start()">
             <!-- <div style="height: auto;min-height: 5rem;border: 1px solid #eceeff;display: flex;border-radius: 1rem;" id="f1">
                 <div style="flex: 1;color: #53588b;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;text-align: center;margin: auto 0;">
