@@ -183,41 +183,42 @@
       }
     </script>
     <script>
-        var count = 0;
+        var count = 1;
     </script>
     <script>
         setInterval(() => { 
-            document.getElementById('next').click();
+            
             switch (count%7) {
                 case 0:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
+                    document.getElementById('head').innerHTML = 'ACM ESP';
+                    document.getElementById('content').innerHTML = '@ VRSEC, VIJAYAWADA';
                     break;
-                case 1:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
+                case 6:
+                    document.getElementById('head').innerHTML = 'PRODIGY 2020';
+                    document.getElementById('content').innerHTML = 'EMINENT SPEAKER PROGRAM';
                     break;
-                case 2:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
-                    break;
-                case 3:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
+                case 5:
+                    document.getElementById('head').innerHTML = 'ICALT 2019';
+                    document.getElementById('content').innerHTML = '15-18 JULY 2019 @ Maceió, BRAZIL';
                     break;
                 case 4:
                     document.getElementById('head').innerHTML = 'ICALT 2019'
+                    document.getElementById('content').innerHTML = '15-18 JULY 2019 @ Maceió, BRAZIL';
+                    break;
+                case 3:
+                    document.getElementById('head').innerHTML = 'ICALT 2019'
                     document.getElementById('content').innerHTML = '27-29 FEB 2020 @ JABALPUR,INDIA';
                     break;
-                case 5:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
+                case 2:
+                    document.getElementById('head').innerHTML = 'ISEC 2020'
+                    document.getElementById('content').innerHTML = '27-29 FEB 2020 @ JABALPUR, INDIA'
                     break;
-                default:
-                    document.getElementById('head').innerHTML = 'Heading ' + (count%7);
-                    document.getElementById('content').innerHTML = 'Content ' + (count%7);
+                case 1:  
+                    document.getElementById('head').innerHTML = 'TEAM DINNER';
+                    document.getElementById('content').innerHTML = '03 DEC 2019 @ MINERVA GRAND, TIRUPATI';
                     break;
             }
+            document.getElementById('next').click();
             count = count  + 1;
         }, 3000);
     </script>
@@ -233,17 +234,17 @@
     <section class="nautilus">
     <div style="background: url('content/assets/images/h1.jpg') center center / cover no-repeat "></div>
     <div style="background: url('content/assets/images/h2.png') center center / cover no-repeat "></div>
-    <div style="background: url('content/assets/images/h3.jpg') center center / cover no-repeat ">
-    </div><div style="background: url('content/assets/images/h4.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h3.jpg') center center / cover no-repeat "></div>
+    <div style="background: url('content/assets/images/h4.jpg') center center / cover no-repeat "></div>
     <div style="background: url('content/assets/images/h5.jpg') center center / cover no-repeat "></div>
     <div style="background: url('content/assets/images/h6.jpg') center center / cover no-repeat "></div>
     <div style="background: url('content/assets/images/meet1.jpg') center center / cover no-repeat "></div>
     </section>
     <section class="back">
     <div class="column">
-    <h3 id="head">Head1</h3>
-    <h4 id="content">Content 1</h4>
-    <h2 id="next">Next</h2>
+    <h3 id="head">ACM ESP</h3>
+    <h4 id="content">@ VRSEC, VIJAYAWADA</h4>
+    <h4 id="next" style="margin-top: 3rem;color: #53588b;">Next</h4>
     </div>
     </section>
     </div>
